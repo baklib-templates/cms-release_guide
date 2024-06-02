@@ -1,0 +1,30 @@
+{% comment %} Card 图文列表展示效果 {% endcomment %}
+<article class="block w-full p-4 break-all bg-white rounded shadow-md dark:bg-slate-600">
+  <div class="flex items-center space-x-2 text-xs font-light shrink-0">
+    {% for tag in page.settings.tags %}
+      <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2">
+        {{ tag.name }}
+      </a>
+    {% endfor %}
+    {%- if page.published_at -%}
+      <span class="flex items-center justify-center text-sm font-normal text-gray-400">{{ page.published_at | date: "%Y-%m-%d" }}</span>
+    {%- endif -%}
+  </div>
+  <h2 class="my-3 text-lg font-bold md:text-2xl text-slate-800 dark:text-slate-100 hover:underline">
+    <a href="{{ page.path }}" class="block">{{ page.settings.title }}</a>
+  </h2>
+  {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
+    <div class="overflow-hidden border rounded">
+      <a href="{{ page.path }}" class="block">
+        <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+      </a>
+    </div>
+  {%- endif  -%}
+
+  {% if page.settings.description %}
+    <p class="leading-normal text-slate-600">{{ page.settings.description }}</p>
+  {% endif  %}
+
+  {%- render "feedback_form", page: page -%}
+  {%- render "sub_page_list", page: page -%}
+</article>

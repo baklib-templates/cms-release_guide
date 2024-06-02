@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="{{ site.language }}">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Baklib">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% meta_tags %}
+    {{ 'editor.css' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
+    {{ 'css/main.css' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
+    <style type="text/css">
+      [x-cloak] { display: none !important; }
+    </style>
+    {{ 'javascripts/main.js' | asset_url | script_tag: defer: true, data-turbo-track: 'reload' }}
+    {%# TIPS：在低代码平台开发时，请打开下一行代码注释 %}
+    {% if false %} {{ 'javascripts/cdn.tailwindcss.js' | asset_url | script_tag: data-turbo-track: 'reload' }} {% endif %}
+    {{ site.settings.head_html }}
+  </head>
+  <body data-controller="scroll-animation" class="antialiased bg-white text-slate-500 dark:text-slate-400 dark:bg-slate-900">
+
+    {% if site.settings.is_allow_header %}
+      {% render 'header' %}
+    {% endif %}
+
+    <main class="relative" data-scroll-animation-target="container">
+      {{ content_for_layout }}
+      {% if site.settings.is_allow_footer %}
+        {% render 'footer' %}
+      {% endif %}
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<header class="h-[100px] bg-primary before:content-[''] before:block before:absolute before:left-0 before:top-0 before:z-[-1] before:w-full before:h-full before:bg-gradient-to-r before:from-white/20 before:to-black/20 fixed top-0 left-0 w-full text-white transition-all duration-300 ease-in-out z-50 will-change-height overflow-hidden" data-scroll-animation-target="header">
+  <div class="ctm-header_between flex justify-between items-center absolute left-0 top-0 w-full max-w-screen-2xl h-[60%] sm:h-[75%] px-2 sm:py-5 sm:px-4 transition-all duration-300 ease-in-out">
+    <div class="shrink-0">
+    </div>
+    <div class="items-end hidden space-x-3 shrink-0 sm:flex">
+      {{ site.settings.header_menu_html }}
+
+      {% if current_user %}
+        <span class="mr-2">{{current_user.name}}</span>
+        {% form_tag 'sign_out' %}
+          <button>Sign out</button>
+        {% endform_tag %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% comment %} title & description {% endcomment %}
+  <div class="relative flex w-full max-w-5xl px-4 mx-auto truncate transition-all duration-300 ease-in-out ctm-header_center mt-7 sm:mt-10 md:px-0">
+    <div class="flex-0 justify-items-start">
+      {% assign logo = 'images/logo.png' | asset_url %}
+      <img src="{{ site.favicon_url | default: logo }}" class="h-10 mr-2 justify-items-start" />
+    </div>
+    <div>
+      <h1>
+        <a href="/" class="text-lg font-semibold hover:underline sm:text-2xl">{{ site.name }}</a>
+      </h1>
+      <small class="block transition-all duration-300 ease-in-out opacity-100 asleep_toggle">{{ site.settings.slogan }}</small>
+    </div>
+  </div>
+</header>
