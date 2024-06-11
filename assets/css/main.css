@@ -873,6 +873,10 @@ video {
   max-width: 64rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .max-w-screen-2xl {
   max-width: 1536px;
 }
@@ -1013,6 +1017,10 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1373,10 +1381,6 @@ video {
 
 .leading-6 {
   line-height: 1.5rem;
-}
-
-.leading-7 {
-  line-height: 1.75rem;
 }
 
 .leading-8 {
@@ -1992,6 +1996,11 @@ body.asleep #screen {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:first\:pl-8:first-child {
