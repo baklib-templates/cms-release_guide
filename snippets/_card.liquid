@@ -15,7 +15,7 @@
     {% endfor %}
   </div>
   <h2 class="my-3 text-lg font-bold md:text-2xl text-slate-800 hover:underline">
-    <a href="{{ page.path }}" class="block">{{ page.settings.title }}</a>
+    <a href="{{ page.path }}">{{ page.settings.title }}</a>
   </h2>
   {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
     <div class="overflow-hidden border rounded">
