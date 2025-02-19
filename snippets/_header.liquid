@@ -41,11 +41,9 @@
               <button class="text-slate-600">{{ 'buttons.signout' | t }}</button>
             {% endform_tag %}
           {% endif %}
-          <hr/>
           <div class="flex flex-col space-y-1 text-slate-800">
             {{ site.settings.header_menu_html }}
           </div>
-          <hr/>
           {% render 'sidebar', site: site %}
         </div>
       </div>
