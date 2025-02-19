@@ -2,9 +2,9 @@
 {% if site.settings.is_allow_feedback %}
   <div id="feedback_form">
     {% form_tag 'feedback', page: page %}
-    <div class="mt-12 relative min-h-[2px]{% if site.plugins.feedback.message_enabled %}' pb-2 pt-4 px-2 '{% endif %}">
+    <div class="bg-primary/5 rounded-lg mt-12 relative min-h-[2px]{% if site.plugins.feedback.message_enabled %}' pb-2 pt-4 px-2 '{% endif %}">
       {% comment %} emoji {% endcomment %}
-      <div class="absolute left-0 flex items-center justify-center w-full space-x-6 -top-6" x-data="{ selected: '{{ page.last_feedback_emoji }}' }" >
+      <div class="flex items-center justify-center w-full space-x-6" x-data="{ selected: '{{ page.last_feedback_emoji }}' }" >
         {% if site.plugins.feedback.message_enabled %}
           <div class="flex flex-wrap items-center justify-center space-x-3">
             {% for useful_type in site.plugins.feedback.useful_types %}
