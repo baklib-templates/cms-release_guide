@@ -41,10 +41,12 @@
               <button class="text-slate-600">{{ 'buttons.signout' | t }}</button>
             {% endform_tag %}
           {% endif %}
-          <div class="flex flex-col text-slate-800 mb-4 max-w-fit">
-            {{ site.settings.header_menu_html }}
-          </div>
-          <div class="min-h-[1px] bg-gray-300 mb-3"></div>
+          {% if site.settings.header_menu_html %}
+            <div class="flex flex-col text-slate-800 mb-4 max-w-fit">
+              {{ site.settings.header_menu_html }}
+            </div>
+            <div class="min-h-[1px] bg-gray-300 mb-3"></div>
+          {% endif %}
           {% render 'sidebar', site: site %}
         </div>
       </div>
