@@ -17,13 +17,13 @@
   </head>
   <body class="antialiased bg-white text-slate-600">
 
-    {% if site.settings.is_allow_header %}
+    {% if site.settings.is_allow_header and false %}
       {% render 'header' %}
     {% endif %}
 
     <main class="relative" data-scroll-animation-target="container">
       {{ content_for_layout }}
-      {% if site.settings.is_allow_footer %}
+      {% if site.settings.is_allow_footer and false %}
         {% render 'footer' %}
       {% endif %}
     </main>
