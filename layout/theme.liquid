@@ -15,7 +15,7 @@
     {% if true %} {{ 'javascripts/cdn.tailwindcss.js' | asset_url | script_tag: data-turbo-track: 'reload' }} {% endif %}
     {{ site.settings.head_html }}
   </head>
-  <body class="antialiased bg-primary text-slate-600">
+  <body class="antialiased bg-primary text-slate-600 min-h-screen">
 
     {% if site.settings.is_allow_header %}
       {% render 'header' %}
