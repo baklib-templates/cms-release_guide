@@ -74,23 +74,23 @@
     "name": "t:settings_schema.generic.name",
     "settings": [
       {
-        "id": "logo_url",
-        "type": "image_picker",
-        "ratio": "3:1",
-        "width": 150,
-        "label": "t:settings_schema.generic.settings.logo_url.label",
-        "info": "t:settings_schema.generic.settings.logo_url.info"
-      },
-      {
         "id": "slogan",
         "type": "text",
         "label": "t:settings_schema.generic.settings.slogan.label",
         "default": "👋 What Can We Help?"
-      },{
+      },
+      {
         "id": "copyright_info",
         "type": "text",
         "label": "t:settings_schema.generic.settings.copyright_info.label",
         "placeholder": "t:settings_schema.generic.settings.copyright_info.placeholder"
+      },
+      {
+        "id": "sort_rule",
+        "type": "select",
+        "label": "首页页面列表展示规则",
+        "choices": [{"label":"按创建日期-倒序","value":"-created_at"},{"label":"按创建日期-正序","value":"created_at"},{"label":"按更新日期-倒序","value":"-edited_at"},{"label":"按更新日期-倒序","value":"edited_at"},{"label":"按访问量（从多到少）","value":"-visit_count"},{"label":"按访问量（从少到多）","value":"visit_count"},{"label":"手动排序","value":""}],
+        "default": "-created_at"
       },
       {
         "id": "is_allow_feedback",
