@@ -23,7 +23,7 @@
 
     <main class="relative" data-scroll-animation-target="container">
       {{ content_for_layout }}
-      {% if site.settings.is_allow_footer and false %}
+      {% if site.settings.is_allow_footer %}
         {% render 'footer' %}
       {% endif %}
     </main>
