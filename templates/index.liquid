@@ -1,27 +1,7 @@
 {% assign sort_rule = site.settings.sort_rule.value |  default: '' %}
 {% assign pages = site.pages['/'].children_in_list | order_by: sort_rule %}
 
-<div class="overflow-visible h-auto pb-[70px] min-h-screen bg-slate-100">
-  
 
-  <div class="max-w-5xl mx-auto relative  flex flex-col sm:flex-row sm:space-x-2 px-3 sm:px-0  pt-[220px]">
-    <div class="w-full space-y-2 lg:space-y-4 -mt-[60px]">
-      {% paginate_tag pages, per: 6 %}
-        {% for page in pages %}
-          {% render "card", page: page %}
-        {% else %}
-          {{ 'generic.empty' | t }}
-        {% endfor %}
-        {% render 'paginate', paginate: paginate %}
-      {% endpaginate_tag %}
-    </div>
-
-    <!-- Sidebar Section -->
-    <aside class="hidden w-64 pl-4 sm:block shrink-0">
-      {% render 'sidebar', site: site %}
-    </aside>
-  </div>
-</div>
 
 {% schema %}
   {
