@@ -9,7 +9,7 @@
           <div class="flex flex-wrap items-center justify-center space-x-3">
             {% for useful_type in site.plugins.feedback.useful_types %}
               <label
-                class="flex items-center p-1 transition-all duration-300 ease-in-out scale-100 border rounded-full bg-primary-100 opacity-80 grayscale"
+                class="flex items-center p-1 transition-all duration-300 ease-in-out scale-100 border rounded-full border-primary-200 bg-primary-100 opacity-80 grayscale cursor-pointer"
                 :class="{ 'scale-150 grayscale-0': selected === '{{ useful_type.emoji }}' }"
                 @click="selected = '{{ useful_type.emoji }}'">
                 <input type="radio" name="feedback[useful_type]" value="{{ useful_type.emoji }}" class="hidden">
