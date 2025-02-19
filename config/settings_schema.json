@@ -4,7 +4,7 @@
     "theme_name": "guide",
     "theme_label": "t:theme_label",
     "theme_description": "t:theme_description",
-    "theme_version": "1.1.2",
+    "theme_version": "v1.0.0",
     "theme_scope": "cms",
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/release-guide",
@@ -89,7 +89,36 @@
         "id": "sort_rule",
         "type": "select",
         "label": "首页页面列表展示规则",
-        "choices": [{"label":"按创建日期-倒序","value":"-created_at"},{"label":"按创建日期-正序","value":"created_at"},{"label":"按更新日期-倒序","value":"-edited_at"},{"label":"按更新日期-倒序","value":"edited_at"},{"label":"按访问量（从多到少）","value":"-visit_count"},{"label":"按访问量（从少到多）","value":"visit_count"},{"label":"手动排序","value":""}],
+        "choices": [
+          {
+            "label": "按创建日期-倒序",
+            "value": "-created_at"
+          },
+          {
+            "label": "按创建日期-正序",
+            "value": "created_at"
+          },
+          {
+            "label": "按更新日期-倒序",
+            "value": "-edited_at"
+          },
+          {
+            "label": "按更新日期-倒序",
+            "value": "edited_at"
+          },
+          {
+            "label": "按访问量（从多到少）",
+            "value": "-visit_count"
+          },
+          {
+            "label": "按访问量（从少到多）",
+            "value": "visit_count"
+          },
+          {
+            "label": "手动排序",
+            "value": ""
+          }
+        ],
         "default": "-created_at"
       },
       {
