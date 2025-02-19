@@ -2,7 +2,7 @@
 {% if site.settings.is_allow_feedback %}
   <div id="feedback_form">
     {% form_tag 'feedback', page: page %}
-    <div class="bg-primary/5 rounded-lg mt-12 relative min-h-[2px]{% if site.plugins.feedback.message_enabled %}' pb-2 pt-4 px-2 '{% endif %}">
+    <div class="bg-primary/5 rounded-lg mt-12 relative min-h-[2px]{% if site.plugins.feedback.message_enabled %}' p-4 '{% endif %}">
       {% comment %} emoji {% endcomment %}
       <div class="flex items-center justify-center w-full space-x-6" x-data="{ selected: '{{ page.last_feedback_emoji }}' }" >
         {% if site.plugins.feedback.message_enabled %}
