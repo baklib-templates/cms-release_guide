@@ -6,7 +6,7 @@
     {%- endif -%}
 
     {% for tag in page.settings.tags %}
-      <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+      <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-offset-2">
         {{ tag.name }}
       </a>
     {% endfor %}
