@@ -84,5 +84,5 @@ module.exports = {
 ## 编译&发布
 
 ```bash
-yarn build
+bun run build
 ```
