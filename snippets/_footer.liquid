@@ -11,7 +11,7 @@
                         {% assign logo = 'images/logo.png' | asset_url %}
                         <img src="{{ site.settings.logo_url | default: logo }}" class="h-8" alt="{{ site.name }} LOGO" />
                     </a>
-                    <div class="text-sm text-slate-500"> {{ site.name }} <span class="md:hidden lg:inline">. {{ 'generic.copyright' | t }}.</span> {{ site.settings.copyright_info }} </div>
+                    <div> {{ site.name }} {{ 'generic.copyright' | t }} {{ site.settings.copyright_info }} </div>
                 </div>
             </div>
         </div>
