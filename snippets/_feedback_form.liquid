@@ -32,7 +32,7 @@
       {%# form %}
       {% if site.plugins.feedback.message_enabled %}
         <div class="flex items-center text-sm relative">
-          <input class="py-3 px-4 pe-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" name="feedback[message]" placeholder="{{ "placeholders.input_feedback" | t }}"></input>
+          <input class="py-3 px-4 pe-13 block w-full border-gray-200 shadow-sm rounded-lg text-sm" name="feedback[message]" placeholder="{{ "placeholders.input_feedback" | t }}"></input>
           <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none z-20 pe-4">{{ "generic.submit" | t }}</div>
         </div>
       {% endif %}
