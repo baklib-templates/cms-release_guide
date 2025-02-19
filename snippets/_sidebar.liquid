@@ -14,24 +14,26 @@
   {%- assign tags_count = tags | size -%}
 
   {%- if tags_count > 0 -%}
-    <label class="block font-mono text-xs font-semibold">TAGS</label>
-    <ul role="list" class="flex flex-col space-y-1">
-      {% for tag in site.tags %}
-        <li>
-          <a 
-            href="{{ tag.path }}" 
-            style="--hover-bg-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 95%);"
-            class="flex items-center p-2 space-x-2 transition-all duration-300 ease-in-out hover:bg-[--hover-bg-color] rounded-lg"
-          >
-            <span class="w-2 h-2 rounded-full shrink-0" style="
-              background-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 30%);
-              color: {{ tag.color }};"></span>
-            <span class="flex-grow w-0 break-words" style="color: {{ tag.color }};">
-              {{ tag.name }}
-            </span>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div>
+      <label class="block font-mono text-xs font-semibold">TAGS</label>
+      <ul role="list" class="flex flex-col space-y-1">
+        {% for tag in site.tags %}
+          <li>
+            <a 
+              href="{{ tag.path }}" 
+              style="--hover-bg-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 95%);"
+              class="flex items-center p-2 space-x-2 transition-all duration-300 ease-in-out hover:bg-[--hover-bg-color] rounded-lg"
+            >
+              <span class="w-2 h-2 rounded-full shrink-0" style="
+                background-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 30%);
+                color: {{ tag.color }};"></span>
+              <span class="flex-grow w-0 break-words" style="color: {{ tag.color }};">
+                {{ tag.name }}
+              </span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div
   {%- endif -%}
 </div>
