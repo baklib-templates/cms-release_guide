@@ -32,7 +32,7 @@
       {%# form %}
       {% if site.plugins.feedback.message_enabled %}
         <div class="flex items-center text-sm">
-          <input class="w-full resize-none px-2 py-1 rounded-md placeholder:text-slate-400  outline-none border max-h-20" name="feedback[message]" placeholder="{{ "placeholders.input_feedback" | t }}"></input>
+          <input class="w-full resize-none px-2 py-1 rounded-md border-l border-t border-b placeholder:text-slate-400 outline-none" name="feedback[message]" placeholder="{{ "placeholders.input_feedback" | t }}"></input>
           <input type="submit" class="inline-flex items-center justify-center px-5 py-1.5 text-center text-primary  font-bold cursor-pointer focus:outline-none bg-primary-focus border " value="{{ "generic.submit" | t }}" />
         </div>
       {% endif %}
