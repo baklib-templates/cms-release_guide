@@ -1,7 +1,7 @@
 {% assign sort_rule = site.settings.sort_rule.value |  default: '' %}
 {% assign pages = site.pages['/'].children_in_list | order_by: sort_rule %}
 
-<div class="overflow-visible h-auto pb-[70px] min-h-screen bg-slate-100">
+<div class="overflow-visible h-auto pb-4 min-h-screen bg-slate-100">
   <div id="screen" class="before:content-[''] before:block before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-gradient-to-r before:from-white/20 before:to-black/20 absolute top-0 left-0 w-full h-[220px] bg-primary text-white transition-all duration-300 ease-in-out p-5 will-change-[height]"></div>
 
   <div class="max-w-5xl mx-auto relative  flex flex-col sm:flex-row sm:space-x-2 px-2 sm:px-0  pt-[220px]">
