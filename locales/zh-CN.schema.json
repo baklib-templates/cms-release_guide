@@ -23,7 +23,7 @@
     },
     "nav": {
       "nav_title": "导航菜单",
-      "head_title": "Head配置",
+      "head_title": "嵌入代码",
       "settings": {
         "header_menu_html": {
           "label": "顶部导航菜单",
