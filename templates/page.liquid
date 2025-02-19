@@ -28,8 +28,8 @@
               {% endfor %}
             </ul>
           {% endif %}
-          <span class="flex items-center justify-center text-sm font-normal text-gray-400"> ·  {{ 'generic.published_at' | t }}: {{ page.published_at | date: "%Y-%m-%d" }}</span>
-          <span class="flex items-center justify-center text-sm font-normal text-gray-400"> ·  {{ page.visits_count }} {{ 'generic.visits' | t }}</span>
+          <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> ·  {{ 'generic.published_at' | t }}: {{ page.published_at | date: "%Y-%m-%d" }}</span>
+          <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> ·  {{ page.visits_count }} {{ 'generic.visits' | t }}</span>
 
         </div>
         <h2 class="my-5 text-lg font-bold md:text-2xl leading-8 text-slate-800 dark:text-slate-800">
