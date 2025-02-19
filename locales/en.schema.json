@@ -3,10 +3,6 @@
     "generic": {
       "name": "Basic Setting",
       "settings": {
-        "logo_url": {
-          "label": "Logo",
-          "info": "recommended ratio 3:1"
-        },
         "slogan": {
           "label": "Slogan"
         },
@@ -26,21 +22,21 @@
       }
     },
     "nav": {
-      "nav_title": "Navigation",
-      "head_title": "Head Meta Setting",
+      "nav_title": "Navigation Menu",
+      "head_title": "Embed HTML",
       "settings": {
         "header_menu_html": {
-          "label": "Header Nav Menu",
-          "info": "Support HTML tags and TailwindCss style code"
+          "label": "Header Navigation Menu",
+          "info": "Support HTML tags"
         },
         "footer_menu_html": {
           "label": "Footer Nav Menu",
-          "info": "Support HTML tags and TailwindCss style code"
+          "info": "Support HTML tags"
         },
         "head_html": {
-          "label": "Head HTML Code",
-          "info": "This part of the content will be embedded in the <head> tag of the site. Please use standard HTML format.",
-          "placeholder": "Refer to external css/js files, meta tags, etc., such as <meta name='baidu_verification' content='CdOTMO2h2' />"
+          "label": "Embed HTML code in head section",
+          "info": "This content will be embedded in the site's <head> tag, please use standard HTML format",
+          "placeholder": "For example, reference external css/js files or add meta tags. <meta name='baidu_verification' content='CdOTMO2h2' />"
         }
       }
     },
