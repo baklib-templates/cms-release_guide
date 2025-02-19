@@ -3,10 +3,6 @@
     "generic": {
       "name": "主题默认设置",
       "settings": {
-        "logo_url": {
-          "label": "Logo图标",
-          "info": "建议 3:1 尺寸的PNG/SVG格式图片"
-        },
         "slogan": {
           "label": "一句话描述"
         },
@@ -30,17 +26,17 @@
       "head_title": "Head配置",
       "settings": {
         "header_menu_html": {
-          "label": "Header页头导航菜单",
-          "info": "支持HTML标签和TailwindCss样式代码"
+          "label": "顶部导航菜单",
+          "info": "支持HTML标签"
         },
         "footer_menu_html": {
-          "label": "Footer页尾导航菜单",
-          "info": "支持HTML标签和TailwindCss样式代码"
+          "label": "底部导航菜单",
+          "info": "支持HTML标签"
         },
         "head_html": {
-          "label": "Head HTML代码",
-          "info": "这部分内容会植入到站点的<head>标签内，请使用标准的 HTML 格式",
-          "placeholder": "如引用外部 css/js 文件，添加 meta 标签等，如 <meta name='baidu_verification' content='CdOTMO2h2' />"
+          "label": "head 区域嵌入 HTML 代码",
+          "info": "这部分内容会嵌入到站点的<head>标签内，请使用标准的 HTML 格式",
+          "placeholder": "比如引用外部 css/js 文件或者添加 meta 标签。<meta name='baidu_verification' content='CdOTMO2h2' />"
         }
       }
     },
