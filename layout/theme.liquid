@@ -21,7 +21,7 @@
       {% render 'header' %}
     {% endif %}
 
-    <main class="relative" data-scroll-animation-target="container">
+    <main class="relative min-h-screen" data-scroll-animation-target="container">
       {{ content_for_layout }}
       {% if site.settings.is_allow_footer %}
         {% render 'footer' %}
