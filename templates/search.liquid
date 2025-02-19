@@ -56,7 +56,9 @@
               <span class="flex-shrink-0 inline-block w-0 h-0 border-[5px] border-l-primary border-t-transparent border-r-transparent border-b-transparent"></span>
             </li>
           {% else %}
-            {{ "generic.empty" | t }}
+            <div class="flex items-center justify-center py-24 text-sm">
+              {{ "generic.empty" | t }}
+            </div
           {% endfor %}
           {% render 'paginate', paginate: paginate %}
         {% endpaginate_tag %}
