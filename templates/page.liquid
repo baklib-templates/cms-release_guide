@@ -13,7 +13,7 @@
         {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
       </div>
 
-      <article class="block p-6 overflow-hidden break-all bg-white rounded-md shadow">
+      <article class="block p-6 break-all bg-white rounded-md shadow">
         <div class="flex items-center space-x-2 text-xs font-light shrink-0">
           {% for tag in page.settings.tags %}
             <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2">
