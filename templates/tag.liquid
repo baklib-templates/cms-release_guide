@@ -23,7 +23,7 @@
           {% for page in pages %}
             {% render 'card', page: page %}
           {% else %}
-            <div class="px-2 py-1 border border-slate-200 bg-white">{{ 'generic.empty' | t }}</div>
+            <div class="px-2 py-1 border border-slate-200 bg-white py-16">{{ 'generic.empty' | t }}</div>
           {% endfor %}
           {% render 'paginate', paginate: paginate %}
         {% endpaginate_tag %}
