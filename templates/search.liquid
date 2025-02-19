@@ -1,13 +1,12 @@
 <div class="overflow-visible h-auto pb-[70px] min-h-screen bg-slate-100">
-  <div class="max-w-5xl mx-auto relative pt-[150px] px-3 sm:px-0">
+  <div class="max-w-5xl mx-auto relative pt-[130px] px-3 sm:px-0">
     {% comment %} search form {% endcomment %}
     <div class="p-5 text-white rounded-tl-lg rounded-tr-lg bg-primary/80">
       <div class="relative flex items-center mb-3 text-center">
-        <a class="absolute flex text-sm font-semibold leading-6 dark:text-slate-200 dark:hover:text-white" href="/">
-          <svg viewBox="0 -9 3 24" class="w-auto h-6 mr-3 overflow-visible dark:group-hover:text-slate-300">
+        <a class="flex text-sm font-semibold leading-6 group text-slate-700 bg-slate-200 px-3 py-0.5 rounded-full hover:bg-slate-700 hover:text-white " href="{{ site.index_path }}">
+          <svg viewBox="0 -9 3 24" class="w-auto h-6 mr-3 overflow-visible text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300">
             <path d="M3 0L0 3L3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          <span>{{ "generic.back" | t }}</span>
+          </svg>{{ "generic.back" | t }}
         </a>
         <h1 class="flex justify-center flex-grow w-0 text-lg">{{ "generic.search_from" | t }}</h1>
       </div>
@@ -32,20 +31,26 @@
 
     {% if search.keywords or search.tag %}
       {% comment %} 查询结果 {% endcomment %}
-      <ul class="p-2 overflow-hidden list-none bg-white rounded-bl-lg rounded-br-lg">
+      <ul class="p-2 overflow-hidden list-none space-y-5 bg-white rounded-bl-lg rounded-br-lg">
+        {% if search.page_number == 1 %}
+          {% for link in search.extends %}
+            <li class="space-y-4 rounded-md bg-accent-100 hover:bg-accent-200 md:p-4">
+              <a class="text-lg font-bold md:text-xl text-slate-800 hover:text-secondary dark:text-slate-200 search-highlight-block" href="{{ link.url }}">{{ link.link_text }}</a>
+              <p class="text-sm line-clamp-3 text-slate-400 search-highlight-block">{{ link.url }}</p>
+            </li>
+          {% endfor %}
+        {% endif %}
         {% paginate_tag search.pages, as: 'items' %}
           {% for page in items %}
-            <li class="flex items-center px-2 py-2 space-x-2 rounded group hover:bg-primary/10">
+            <li class="flex items-center px-2 py-2 space-x-2 rounded group hover:bg-primary/10 border-b border-slate-200">
               <div class="flex-grow w-0">
-                {% render 'breadcrumb', breadcrumb: page.breadcrumb %}
-
-                <h3 class="truncate group-hover:text-primary">
-                  <a href="{{ page.url }}" class="inline-block">
-                    {{ page.link_text | highlight: search.keywords }}
+                <h3 class="truncate group-hover:text-primary text-xl font-semibold">
+                  <a href="{{ page.path }}" class="inline-block search-highlight-block">
+                    {{ page.highlighted_search_title }}
                   </a>
                 </h3>
-                <p class="text-gray-400 line-clamp-3">
-                  {{ page.settings.content | strip_html | highlight: search.keywords }}
+                <p class="text-gray-400 line-clamp-3 search-highlight-block">
+                  {{ page.highlighted_search_content }}
                 </p>
               </div>
               <span class="flex-shrink-0 inline-block w-0 h-0 border-[5px] border-l-primary border-t-transparent border-r-transparent border-b-transparent"></span>
