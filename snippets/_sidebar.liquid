@@ -1,5 +1,6 @@
 <div class="space-y-4">
   <h3 class="text-slate-500 font-semibold">{{ 'generic.search' | t }}</h3>
+  
   {% form_tag 'search' %}
     <div class="flex items-center text-sm relative group">
       <input class="py-3 px-4 pe-13 block w-full border-gray-200 shadow-sm rounded-lg text-sm group-focus:border-gray-700" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape }}" placeholder="{{ "placeholders.search" | t }}"></input>
