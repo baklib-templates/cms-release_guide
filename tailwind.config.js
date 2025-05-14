@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // prefix: 'bke-',
   content: [
     "./layout/**/*.liquid",
     "./snippets/**/*.liquid",

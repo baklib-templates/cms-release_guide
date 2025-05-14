@@ -6,4 +6,4 @@ window.Alpine = Alpine
 Alpine.plugin(collapse)
 Alpine.start()
 
-import "./controllers"
+import "./../controllers"

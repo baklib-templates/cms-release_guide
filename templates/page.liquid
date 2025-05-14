@@ -1,24 +1,21 @@
-<div class="overflow-visible h-auto pb-4 sm:pb-8 min-h-screen bg-slate-100">
-  <div class="max-w-5xl mx-auto relative pt-[130px] px-2 flex space-x-2">
-    <div class="space-y-2 lg:space-y-4 -mt-[60px] w-0 flex-grow">
-      <div class="flex sm:hidden">
-        <a class="flex text-sm font-semibold leading-6 group text-slate-700 bg-slate-200 px-3 py-0.5 rounded-full hover:bg-slate-700 hover:text-white " href="{{ page.parent.path }}">
-          <svg viewBox="0 -9 3 24" class="w-auto h-6 mr-3 overflow-visible text-slate-400">
-            <path d="M3 0L0 3L3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>{{ "generic.back" | t }}
-        </a>
-      </div>
-      {% # 面包屑导航 %}
-      {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
+  <div class='my-2 hidden md:block'>
+    {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
+  </div>
+  <div class="flex md:space-x-2 mx-2 lg:mx-0 h-full">
+    <div class="flex-1 flex flex-col h-full space-y-2 min-h-[calc(100vh-200px)]">
+      {% assign page_title = page.settings.title | presence %}
+      {% assign page_thumb_image_url = page.settings.thumb_image_url | presence %}
+      {% assign page_description = page.settings.description | presence %}
+      {% assign page_content = page.settings.content | presence %}
 
-      <article class="block p-6 break-all bg-white rounded-md shadow">
+      <article class="block p-4 break-all bg-white rounded-md shadow">
         <div class="flex items-center space-x-2 text-xs font-light shrink-0">
           {% for tag in page.settings.tags %}
             <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2">
               {{ tag.name }}
             </a>
           {% endfor %}
-          
+
           {% assign version_count = page.versions | size %}
           {% if version_count > 0 %}
             <ul class="flex space-x-1">
@@ -28,42 +25,56 @@
               {% endfor %}
             </ul>
           {% endif %}
-          <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> ·  {{ 'generic.published_at' | t }}: {{ page.published_at | date: "%Y-%m-%d" }}</span>
-          <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> ·  {{ page.visits_count }} {{ 'generic.visits' | t }}</span>
-
+          {%- if page.published_at -%}
+            <div class="flex items-center space-x-1 text-gray-400">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M7 3V1H9V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V9H20V5H17V7H15V5H9V7H7V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7ZM17 12C14.7909 12 13 13.7909 13 16C13 18.2091 14.7909 20 17 20C19.2091 20 21 18.2091 21 16C21 13.7909 19.2091 12 17 12ZM11 16C11 12.6863 13.6863 10 17 10C20.3137 10 23 12.6863 23 16C23 19.3137 20.3137 22 17 22C13.6863 22 11 19.3137 11 16ZM16 13V16.4142L18.2929 18.7071L19.7071 17.2929L18 15.5858V13H16Z"></path></svg>
+              <span class="flex items-center justify-center text-xs font-mono">{{ page.published_at | date: "%Y-%m-%d" }}</span>
+            </div>
+          {%- endif -%}
+          {% comment %} 是否显示访问量 {% endcomment %}
+          {% if site.settings.is_show_visit_count %}
+            <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> · {{ page.visits_count }} {{ 'generic.visits' | t: '访问量' }}</span>
+          {% endif %}
         </div>
-        <h2 class="my-5 text-lg font-bold md:text-2xl leading-8 text-slate-800 dark:text-slate-800">
+        <h2 class="my-5 text-lg font-bold md:text-2xl leading-8 text-slate-800">
           {{ page.settings.title }}
         </h2>
         {% if page.settings.thumb_image_url %}
-          <div class="overflow-hidden rounded-lg bg-primary-50">
+          <div class="overflow-hidden rounded-lg bg-primary/8 md:max-h-[40vh] mb-2">
             <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
           </div>
         {% endif %}
-        {% if page.settings.description %}
-          <p class="p-4 my-4 rounded-lg border-l-4 border-primary text-slate-700 bg-primary-50">{{ page.settings.description }}</p>
+        {% if page_description %}
+          <p class="p-4 my-4 rounded-lg border-l-4 border-primary text-slate-700 bg-primary/8">{{ page_description }}</p>
         {% endif  %}
 
         <div class="overflow-auto max-w-full">
-          <div class="ProseMirror prose sm:prose-base lg:prose-lg focus:outline-none dark:prose-invert">
-            {{ page.settings.content }}
+          <div class="ProseMirror prose sm:prose-base lg:prose-lg focus:outline-none">
+            {{ page_content }}
           </div>
         </div>
-
-        {% comment %} feedback form {% endcomment %}
-        {% render "feedback_form", page: page %}
-
-        {% comment %} page children {% endcomment %}
-        {% render "sub_page_list", page: page %}
       </article>
+
+      {%- assign sub_pages_count = page.children_in_list | size -%}
+      {% if sub_pages_count > 0 %}
+        <ul role="list" class="space-y-2">
+          {% paginate_tag page.children_in_list, as: 'pages' %}
+            {% for page in pages %}
+              {% render 'card', page: page %}
+            {% else %}
+              <div class="rounded-lg bg-white py-24 text-sm flex justify-center">{{ 'generic.empty' | t }}</div>
+            {% endfor %}
+            {% render 'paginate', paginate: paginate %}
+          {% endpaginate_tag %}
+        </ul>
+      {% endif %}
     </div>
 
     <!-- Sidebar Section -->
-    <aside class="hidden w-64 pl-4 sm:block shrink-0">
+    <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[74px] h-fit">
       {% render 'sidebar', site: site %}
     </aside>
   </div>
-</div>
 
 {% schema %}
   {
@@ -75,31 +86,31 @@
         "id": "title",
         "type": "text",
         "placeholder": "",
-        "label": "t:settings_schema.page.settings.title.label",
-        "info": "t:settings_schema.page.settings.title.info"
+        "label": "t:schema.settings_schema.page.settings.title.label",
+        "info": "t:schema.settings_schema.page.settings.title.info"
       },
       {
         "id": "description",
         "type": "textarea",
-        "label": "t:settings_schema.page.settings.description.label"
+        "label": "t:schema.settings_schema.page.settings.description.label"
       },
       {
         "id": "tags",
         "type": "tag_picker",
         "multiple": true,
-        "label": "t:settings_schema.page.settings.tags.label"
+        "label": "t:schema.settings_schema.page.settings.tags.label"
       },
       {
         "id": "thumb_image_url",
         "type": "image_picker",
         "ratio": "4:1",
         "width": 640,
-        "label": "t:settings_schema.page.settings.thumb_image_url.label"
+        "label": "t:schema.settings_schema.page.settings.thumb_image_url.label"
       },
       {
         "id": "content",
         "type": "richtext",
-        "label": "t:settings_schema.page.settings.content.label"
+        "label": "t:schema.settings_schema.page.settings.content.label"
       }
     ]
   }

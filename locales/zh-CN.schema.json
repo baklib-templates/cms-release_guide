@@ -1,23 +1,44 @@
 {
   "settings_schema": {
     "generic": {
-      "name": "主题默认设置",
+      "name": "通用设置",
       "settings": {
         "slogan": {
-          "label": "一句话描述"
+          "label": "一句话描述",
+          "default": "欢迎查看产品发布指南"
+        },
+        "company_name": {
+          "label": "公司名称",
+          "default": "Baklib.cn",
+          "info": "显示在页面底部页脚位置"
         },
         "copyright_info": {
-          "label": "版权备案信息",
+          "label": "备案/版权信息",
           "placeholder": "蜀ICP备15035023号"
         },
         "is_allow_feedback":{
           "label": "是否展示用户反馈"
+        },
+        "is_show_visit_count":{
+          "label": "是否展示访问量"
         },
         "is_allow_header":{
           "label": "是否展示页头Header部分"
         },
         "is_allow_footer":{
           "label": "是否展示页脚Footer部分"
+        },
+        "sort_rule": {
+          "label": "首页页面列表展示规则",
+          "options": {
+            "created_at_desc": "按创建日期-倒序",
+            "created_at_asc": "按创建日期-正序",
+            "edited_at_desc": "按更新日期-倒序",
+            "edited_at_asc": "按更新日期-正序",
+            "visit_count_desc": "按访问量（从多到少）",
+            "visit_count_asc": "按访问量（从少到多）",
+            "manual": "手动排序"
+          }
         }
       }
     },

@@ -1,39 +1,55 @@
 <div class="space-y-4">
-  <h3 class="text-slate-500 font-semibold">{{ 'generic.search' | t }}</h3>
-
   {% form_tag 'search' %}
-    <div class="flex items-center text-sm relative group text-slate-700">
-      <input class="py-3 px-4 pe-13 block w-full border-gray-200 shadow-sm rounded-lg text-sm group-focus:border-gray-700" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape }}" placeholder="{{ "placeholders.search" | t }}"></input>
-      <button type="submit" class="absolute inset-y-0 end-0 flex items-center pe-4">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-gray-400 group-hover:fill-gray-700 w-5 h-5"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
-      </button>
-    </div>
+    <label class="input">
+      <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <g
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2.5"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </g>
+      </svg>
+      <input type="search" class="grow" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape }}" placeholder="{{ "placeholders.search" | t }}" />
+    </label>
   {% endform_tag %}
+
+  {%- assign header_menu_html = site.settings.header_menu_html -%}
+  {% if header_menu_html %}
+    <div class='card bg-white p-4'>
+      <label class="block font-mono text-xs font-semibold mb-3 text-slate-500">MENU</label>
+      <div class="space-y-2 flex flex-col pt-2 underline">
+        {{ header_menu_html }}
+      </div>
+    </div>
+  {% endif %}
+
 
   {%- assign tags = site.tags -%}
   {%- assign tags_count = tags | size -%}
 
-  {%- if tags_count > 0 -%}
-    <div>
-      <label class="block font-mono text-xs font-semibold mb-1 ps-1 text-slate-500">TAGS</label>
+  {% if tags_count > 0 %}
+    <div class='card bg-white p-4'>
+      <label class="block font-mono text-xs font-semibold mb-3 text-slate-500">TAGS</label>
       <ul role="list" class="flex flex-col">
         {% for tag in site.tags %}
-          <li>
-            <a 
-              href="{{ tag.path }}" 
-              style="--hover-bg-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 95%);"
-              class="flex items-center px-2 py-1.5 space-x-2 transition-all duration-300 ease-in-out hover:bg-[--hover-bg-color] rounded-lg"
+          <li >
+            <a
+              href="{{ tag.path }}"
+              style="--tag-color: {{ tag.color }};"
+              class="flex items-center py-1.5 space-x-2 transition-all duration-300 ease-in-out"
             >
-              <span class="w-2 h-2 rounded-full shrink-0" style="
-                background-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 30%);
-                color: {{ tag.color }};"></span>
-              <span class="flex-grow w-0 break-words" style="color: {{ tag.color }};">
+              <span class="w-2 h-2 rounded-full shrink-0" style="background-color: {{ tag.color }};"></span>
+              <span class="flex-grow break-words hover:text-[var(--tag-color)] text-slate-500">
                 {{ tag.name }}
               </span>
             </a>
           </li>
         {% endfor %}
       </ul>
-    </div
-  {%- endif -%}
+    </div>
+  {% endif %}
 </div>
