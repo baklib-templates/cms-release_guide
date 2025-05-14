@@ -43,9 +43,6 @@
       "input_feedback": "请输入反馈内容"
     },
     "buttons": {
-      "submit": "提交",
-      "cancel": "取消",
-      "ok": "确定",
       "close": "关闭",
       "signout": "退出登录",
       "signin": "登录"
