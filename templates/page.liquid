@@ -19,7 +19,8 @@
           {% assign version_count = page.versions | size %}
           {% if version_count > 0 %}
             <ul class="flex space-x-1">
-              <li class="px-2 py-1 border rounded-lg hover:bg-teal-100"><a href="{{ page.path }}">{{'generic.current_version' | t }}</a></li>
+              <li class="px-2 py-1 border rounded-lg hover:bg-teal-100"><a href="{{ page.path }}">{{'
+              templates.page.current_version' | t }}</a></li>
               {% for version_page in page.versions %}
                 <li class="px-2 py-1 border rounded-lg hover:bg-teal-100"><a href="{{ version_page.path | append: '?version=' |  append: version_page.name }}">{{ version_page.name }}</a></li>
               {% endfor %}
@@ -33,7 +34,8 @@
           {%- endif -%}
           {% comment %} 是否显示访问量 {% endcomment %}
           {% if site.settings.is_show_visit_count %}
-            <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> · {{ page.visits_count }} {{ 'generic.visits' | t: '访问量' }}</span>
+            <span class="flex items-center justify-center text-xs font-mono font-normal text-gray-400"> · {{ page.visits_count }} {{ '
+            templates.page.visit_count' | t: '访问量' }} </span>
           {% endif %}
         </div>
         <h2 class="my-5 text-lg font-bold md:text-2xl leading-8 text-slate-800">
@@ -78,7 +80,8 @@
 
 {% schema %}
   {
-    "name": "Page",
+    "name": "t:schema.templates.page.name",
+    "description": "t:schema.templates.page.description",
     "thumb_url": "images/theme/page.png",
     "sub_page_templates": ["page"],
     "settings": [
@@ -86,31 +89,31 @@
         "id": "title",
         "type": "text",
         "placeholder": "",
-        "label": "t:schema.settings_schema.page.settings.title.label",
-        "info": "t:schema.settings_schema.page.settings.title.info"
+        "label": "t:schema.templates.page.settings.title.label",
+        "info": "t:schema.templates.page.settings.title.info"
       },
       {
         "id": "description",
         "type": "textarea",
-        "label": "t:schema.settings_schema.page.settings.description.label"
+        "label": "t:schema.templates.page.settings.description.label"
       },
       {
         "id": "tags",
         "type": "tag_picker",
         "multiple": true,
-        "label": "t:schema.settings_schema.page.settings.tags.label"
+        "label": "t:schema.templates.page.settings.tags.label"
       },
       {
         "id": "thumb_image_url",
         "type": "image_picker",
         "ratio": "4:1",
         "width": 640,
-        "label": "t:schema.settings_schema.page.settings.thumb_image_url.label"
+        "label": "t:schema.templates.page.settings.thumb_image_url.label"
       },
       {
         "id": "content",
         "type": "richtext",
-        "label": "t:schema.settings_schema.page.settings.content.label"
+        "label": "t:schema.templates.page.settings.content.label"
       }
     ]
   }

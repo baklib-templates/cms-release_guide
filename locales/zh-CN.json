@@ -1,34 +1,54 @@
 {
-  "theme_label": "Release Guide",
-  "theme_description": "小型CMS内容管理系统，用于构建如产品更新、公告发布、新闻、博客、日志、常见问题等。",
+  "snippets": {
+    "header": {
+      "search_placeholder": "搜索...",
+      "sign_in_button": "登录"
+    },
+    "feedback_form": {
+      "title": "提交反馈",
+      "message_label": "留言",
+      "message_placeholder": "请输入反馈内容",
+      "message_required": "反馈内容不能为空",
+      "submit": "提交",
+      "cancel": "取消"
+    },
+    "feedback_button": {
+      "title_posted": "感谢您的反馈",
+      "title_unposted": "提交反馈"
+    },
+    "page": {
+      "prev_page": "上一页",
+      "next_page": "下一页",
+      "no_prev_next_page": "无",
+      "page_toc": "页内目录"
+    }
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "全部"
+      }
+    },
+    "page": {
+      "current_version": "当前版本",
+      "visit_count": "访问量"
+    }
+  },
   "generic": {
-    "search": "👋 搜索",
-    "search_from": "搜索结果：",
-    "all": "全部",
-    "popular": "热门",
-    "home": "首页",
-    "back": "返回",
-    "submit": "提交",
-    "empty": "内容为空",
-    "published_at": "发布于",
-    "articles": "篇文章",
-    "read_more": "阅读更多",
-    "404": "404 页面找不到",
-    "403": "403 无访问权限",
+    "empty": "暂无数据",
     "copyright": "版权所有",
-    "current_version": "当前版本"
-  },
-  "placeholders": {
-    "search": "站内搜索",
-    "input_feedback": "请与我们留言",
-    "input_password": "输入密码"
-  },
-  "buttons": {
-    "login": "登录",
-    "sso_login": "SSO 登录",
-    "baklib_login": "Baklib 账号登录"
-  },
-  "prompts": {
-    "page_restricted": "本页面需要认证才可以被访问"
+    "submit": "提交",
+    "placeholders": {
+      "search": "搜索",
+      "input_feedback": "请输入反馈内容"
+    },
+    "buttons": {
+      "submit": "提交",
+      "cancel": "取消",
+      "ok": "确定",
+      "close": "关闭",
+      "signout": "退出登录",
+      "signin": "登录"
+    }
   }
 }

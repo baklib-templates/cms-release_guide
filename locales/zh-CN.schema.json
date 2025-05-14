@@ -1,68 +1,10 @@
 {
-  "settings_schema": {
-    "generic": {
-      "name": "通用设置",
-      "settings": {
-        "slogan": {
-          "label": "一句话描述",
-          "default": "欢迎查看产品发布指南"
-        },
-        "company_name": {
-          "label": "公司名称",
-          "default": "Baklib.cn",
-          "info": "显示在页面底部页脚位置"
-        },
-        "copyright_info": {
-          "label": "备案/版权信息",
-          "placeholder": "蜀ICP备15035023号"
-        },
-        "is_allow_feedback":{
-          "label": "是否展示用户反馈"
-        },
-        "is_show_visit_count":{
-          "label": "是否展示访问量"
-        },
-        "is_allow_header":{
-          "label": "是否展示页头Header部分"
-        },
-        "is_allow_footer":{
-          "label": "是否展示页脚Footer部分"
-        },
-        "sort_rule": {
-          "label": "首页页面列表展示规则",
-          "options": {
-            "created_at_desc": "按创建日期-倒序",
-            "created_at_asc": "按创建日期-正序",
-            "edited_at_desc": "按更新日期-倒序",
-            "edited_at_asc": "按更新日期-正序",
-            "visit_count_desc": "按访问量（从多到少）",
-            "visit_count_asc": "按访问量（从少到多）",
-            "manual": "手动排序"
-          }
-        }
-      }
-    },
-    "nav": {
-      "nav_title": "导航菜单",
-      "head_title": "嵌入代码",
-      "settings": {
-        "header_menu_html": {
-          "label": "顶部导航菜单",
-          "info": "支持HTML标签"
-        },
-        "footer_menu_html": {
-          "label": "底部导航菜单",
-          "info": "支持HTML标签"
-        },
-        "head_html": {
-          "label": "head 区域嵌入 HTML 代码",
-          "info": "这部分内容会嵌入到站点的<head>标签内，请使用标准的 HTML 格式",
-          "placeholder": "比如引用外部 css/js 文件或者添加 meta 标签。<meta name='baidu_verification' content='CdOTMO2h2' />"
-        }
-      }
-    },
+  "theme_label": "Release Guide",
+  "theme_description": "小型CMS内容管理系统，用于构建如产品更新、公告发布、新闻、博客、日志、常见问题等。",
+  "templates": {
     "page": {
       "name": "文章页面",
+      "description": "文章页面模板",
       "settings": {
         "title":{
           "label": "标题",
@@ -80,6 +22,68 @@
         "content":{
           "label": "页面内容"
         }
+      }
+    }
+  },
+  "generic": {
+    "name": "通用设置",
+    "settings": {
+      "slogan": {
+        "label": "一句话描述",
+        "default": "欢迎查看产品发布指南"
+      },
+      "company_name": {
+        "label": "公司名称",
+        "default": "Baklib.cn",
+        "info": "显示在页面底部页脚位置"
+      },
+      "copyright_info": {
+        "label": "备案/版权信息",
+        "placeholder": "蜀ICP备15035023号"
+      },
+      "is_allow_feedback":{
+        "label": "是否展示用户反馈"
+      },
+      "is_show_visit_count":{
+        "label": "是否展示访问量"
+      },
+      "is_allow_header":{
+        "label": "是否展示页头Header部分"
+      },
+      "is_allow_footer":{
+        "label": "是否展示页脚Footer部分"
+      },
+      "sort_rule": {
+        "label": "首页页面列表展示规则",
+        "options": {
+          "created_at_desc": "按创建日期-倒序",
+          "created_at_asc": "按创建日期-正序",
+          "edited_at_desc": "按更新日期-倒序",
+          "edited_at_asc": "按更新日期-正序",
+          "visit_count_desc": "按访问量（从多到少）",
+          "visit_count_asc": "按访问量（从少到多）",
+          "manual": "手动排序"
+        }
+      }
+    }
+  },
+  "custom_html": {
+    "name": "自定义 HTML 代码",
+    "settings": {
+      "head_html": {
+        "label": "自定义 <head></head> 标签中的 HTML",
+        "info": "支持HTML标签和有限的TailwindCSS样式代码",
+        "placeholder": "通常在这里插入访问统计、客服机器人等嵌入代码"
+      },
+      "header_menu_html": {
+        "label": "顶部导航区域插入 HTML 代码",
+        "info": "支持HTML标签和有限的TailwindCSS样式代码",
+        "placeholder": "通常在这里插入公司其他网站的导航链接"
+      },
+      "footer_menu_html": {
+        "label": "底部区域插入 HTML 代码",
+        "info": "支持HTML标签和有限的TailwindCSS样式代码",
+        "placeholder": "通常在这里插入公司其他网站的外部导航链接、友情链接、SEO 优化链接等"
       }
     }
   }

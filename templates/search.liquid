@@ -4,7 +4,7 @@
     <div class="p-5 text-white rounded-tl-lg rounded-tr-lg bg-primary/80">
       {% form_tag 'search' %}
         <div class="relative flex items-center">
-          <input type="text" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape_once }}" class="block w-full outline-none border-0 bg-white rounded pl-2 pr-8 text-[#424242] py-3 placeholder:text-gray-400 text-sm" placeholder="{{ "placeholders.search" | t }}" x-init="$nextTick(() => { $el.focus(); $el.setSelectionRange($el.value.length, $el.value.length); })">
+          <input type="text" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape_once }}" class="block w-full outline-none border-0 bg-white rounded pl-2 pr-8 text-[#424242] py-3 placeholder:text-gray-400 text-sm" placeholder="{{ 'generic.placeholders.search' | t }}" x-init="$nextTick(() => { $el.focus(); $el.setSelectionRange($el.value.length, $el.value.length); })">
         </div>
       {% endform_tag %}
     </div>

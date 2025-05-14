@@ -26,10 +26,29 @@
         {{ site.settings.header_menu_html }}
       </div>
       {% if current_user %}
-        <span class="mr-2">{{current_user.name}}</span>
-        {% form_tag 'sign_out' %}
-          <button class="text-slate-600">{{ 'buttons.signout' | t }}</button>
-        {% endform_tag %}
+        <div class='ml-4 flex items-center space-x-2'>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="avatar hue-rotate-15 w-8 h-8 rounded-full cursor-pointer flex items-center justify-center bg-white">
+              {% if current_user.image %}
+                <img src="{{ current_user.image }}" alt="{{ current_user.name }}" class="w-8 h-8 rounded-full object-cover" />
+              {% else %}
+                <svg class="w-8 h-8 text-base-content/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
+                </svg>
+              {% endif %}
+            </div>
+            <div tabindex="0" class="dropdown-content py-2 px-3 shadow bg-base-100 rounded-box w-30 mt-2 space-y-3">
+              <div class="font-medium text-primary/80 line-clamp-1 border-b pb-2
+              ">{{ current_user.name }}张三用户</div>
+              <div class='text-gray-500'>
+                {% form_tag 'sign_out' %}
+                  <button class='text-left h-[20px] w-full hover:link'>{{ 'generic.buttons.signout' | t }}</button>
+                {% endform_tag %}
+              </div>
+            </div>
+          </div>
+        </div>
       {% endif %}
     </div>
   </div>
