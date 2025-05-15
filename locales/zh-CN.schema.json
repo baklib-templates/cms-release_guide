@@ -1,5 +1,5 @@
 {
-  "theme_label": "Release Guide",
+  "theme_label": "发布指南模版",
   "theme_description": "小型CMS内容管理系统，用于构建如产品更新、公告发布、新闻、博客、日志、常见问题等。",
   "templates": {
     "page": {

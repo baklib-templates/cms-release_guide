@@ -1,27 +1,5 @@
 {
   "snippets": {
-    "header": {
-      "search_placeholder": "搜索...",
-      "sign_in_button": "登录"
-    },
-    "feedback_form": {
-      "title": "提交反馈",
-      "message_label": "留言",
-      "message_placeholder": "请输入反馈内容",
-      "message_required": "反馈内容不能为空",
-      "submit": "提交",
-      "cancel": "取消"
-    },
-    "feedback_button": {
-      "title_posted": "感谢您的反馈",
-      "title_unposted": "提交反馈"
-    },
-    "page": {
-      "prev_page": "上一页",
-      "next_page": "下一页",
-      "no_prev_next_page": "无",
-      "page_toc": "页内目录"
-    }
   },
   "templates": {
     "index": {

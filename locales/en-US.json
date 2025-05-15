@@ -1,0 +1,29 @@
+{
+  "snippets": {
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "All"
+      }
+    },
+    "page": {
+      "current_version": "Current Version",
+      "visit_count": "Visit Count"
+    }
+  },
+  "generic": {
+    "empty": "No data",
+    "copyright": "All rights reserved",
+    "submit": "Submit",
+    "placeholders": {
+      "search": "Search",
+      "input_feedback": "Please enter your feedback"
+    },
+    "buttons": {
+      "close": "Close",
+      "signout": "Sign Out",
+      "signin": "Sign In"
+    }
+  }
+}
