@@ -6,7 +6,7 @@
 
   <div class="max-w-5xl mx-auto relative  flex flex-col sm:flex-row sm:space-x-2 px-2 sm:px-0  pt-[220px]">
     <div class="w-full space-y-2 lg:space-y-4 -mt-[60px]">
-      {% paginate_tag pages, per: 6 %}
+      {% paginate_tag pages, per: 10 %}
         {% for page in pages %}
           {% render "card", page: page %}
         {% else %}
