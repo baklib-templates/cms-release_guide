@@ -3,7 +3,7 @@
 
 <div id="screen" class="bg-primary bg-gradient-to-r from-white/20 md:to-black/20 h-[110px] absolute -top-[64px] left-0 w-full z-0"></div>
 
-<div class="overflow-visible flex flex-col sm:flex-row sm:space-x-2 px-2 sm:px-0">
+<div class="overflow-visible max-w-5xl mx-auto h-full p-2 sm:px-0 flex flex-col sm:flex-row sm:space-x-2">
   <div class="w-full space-y-2 lg:space-y-4">
     {% paginate_tag pages, per: 6 %}
       {% for page in pages %}

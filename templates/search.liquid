@@ -1,5 +1,4 @@
-<div class="overflow-visible h-auto pb-4 sm:pb-8 min-h-screen bg-slate-100">
-  <div class="max-w-5xl mx-auto relative px-2 sm:px-0">
+<div class="overflow-visible max-w-5xl mx-auto h-full p-2 sm:px-0 min-h-screen bg-slate-100">
     {% comment %} search form {% endcomment %}
     <div class="p-5 text-white rounded-tl-lg rounded-tr-lg bg-primary/80">
       {% form_tag 'search' %}
@@ -46,5 +45,4 @@
     {% else %}
       <div class="w-full mx-auto my-8">{{ "generic.empty" | t }}</div>
     {% endif %}
-  </div>
 </div>

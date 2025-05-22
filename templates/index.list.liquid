@@ -1,62 +1,64 @@
 <!-- from cruip mosaic theme -->
 {% assign pages = site.pages['/'].children_in_list | order_by: '-created_at' %}
-<div class="overflow-visible px-2 sm:px-0">
-  <!-- Search form -->
-  <div class='mb-2 md:mb-4'>
-    {% form_tag 'search' %}
-      <label class="input border border-slate-200 bg-white rounded-lg shadow-sm flex items-center space-x-2 px-4 py-2 w-full">
-        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <g
-            stroke-linejoin="round"
-            stroke-linecap="round"
-            stroke-width="2.5"
-            fill="none"
-            stroke="currentColor"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.3-4.3"></path>
-          </g>
-        </svg>
-        <input type="search" class="grow" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape }}" placeholder="{{ 'generic.placeholders.search' | t }}" />
-      </label>
-    {% endform_tag %}
-  </div>
-
-  <!-- Tag Filters -->
-  {% assign tags_size = site.tags | size %}
-  {% if tags_size > 0 %}
-    <div class="my-2 md:my-4 border-b border-slate-200">
-      <ul class="flex overflow-x-scroll text-sm font-medium flex-nowrap sm:-mx-6 lg:-mx-8 md:overflow-x-hidden">
-        <li class="p-2">
-          <a class="font-bold text-primary whitespace-nowrap" href="/">{{ 'templates.index.list.all' | t }}</a>
-        </li>
-        {% for tag in site.tags %}
-          <li class="p-2">
-            <a href="{{ tag.path }}" class="text-slate-500 hover:text-primary whitespace-nowrap">
-              {{ tag.name }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+<div class='bg-white'>
+  <div class="overflow-visible max-w-5xl mx-auto h-full p-2 sm:px-0">
+    <!-- Search form -->
+    <div class='my-8 md:mb-4'>
+      {% form_tag 'search' %}
+        <label class="input !border !border-slate-400 rounded-lg flex items-center space-x-2 px-4 py-2 w-full">
+          <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" class="grow" name="{{form.keywords_field_name}}" value="{{ search.keywords | escape }}" placeholder="{{ 'generic.placeholders.search' | t }}" />
+        </label>
+      {% endform_tag %}
     </div>
-  {% endif %}
 
-  <!-- Posts -->
-  <div>
-    {% paginate_tag pages, per: 9 %}
-      {% for page in pages %}
-        {% render 'list', page: page %}
-      {% else %}
-        {{ 'generic.empty' | t }}
-      {% endfor %}
-
-      <!-- Pagination -->
-      <div class="mt-6">
-        <div class="flex justify-end">
-          {% render 'paginate', paginate: paginate %}
-        </div>
+    <!-- Tag Filters -->
+    {% assign tags_size = site.tags | size %}
+    {% if tags_size > 0 %}
+      <div class="my-2 md:my-4 border-b border-slate-200">
+        <ul class="flex overflow-x-scroll text-sm font-medium flex-nowrap md:overflow-x-hidden">
+          <li class="p-2">
+            <a class="font-bold text-primary whitespace-nowrap" href="/">{{ 'templates.index.list.all' | t }}</a>
+          </li>
+          {% for tag in site.tags %}
+            <li class="p-2">
+              <a href="{{ tag.path }}" class="text-slate-500 hover:text-primary whitespace-nowrap">
+                {{ tag.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-    {% endpaginate_tag %}
+    {% endif %}
+
+    <!-- Posts -->
+    <div>
+      {% paginate_tag pages, per: 9 %}
+        {% for page in pages %}
+          {% render 'list', page: page %}
+        {% else %}
+          {{ 'generic.empty' | t }}
+        {% endfor %}
+
+        <!-- Pagination -->
+        <div class="mt-6">
+          <div class="flex justify-end">
+            {% render 'paginate', paginate: paginate %}
+          </div>
+        </div>
+      {% endpaginate_tag %}
+    </div>
   </div>
 </div>
 
