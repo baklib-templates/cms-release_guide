@@ -2,8 +2,8 @@
   {
     "name": "theme_info",
     "theme_name": "guide",
-    "theme_label": "t:theme_label",
-    "theme_description": "t:theme_description",
+    "theme_label": "t:schema.theme_label",
+    "theme_description": "t:schema.theme_description",
     "theme_version": "1.2.0",
     "theme_scope": "cms",
     "theme_author": "Baklib",
