@@ -9,12 +9,12 @@
     },
     "page": {
       "current_version": "Current Version",
-      "visit_count": "Visit Count"
+      "visit_count": "Visits"
     }
   },
   "generic": {
-    "empty": "No data",
-    "copyright": "All rights reserved",
+    "empty": "No Data",
+    "copyright": "Copyright",
     "submit": "Submit",
     "placeholders": {
       "search": "Search",

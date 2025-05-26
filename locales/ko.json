@@ -1,0 +1,29 @@
+{
+  "snippets": {
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "전체"
+      }
+    },
+    "page": {
+      "current_version": "현재 버전",
+      "visit_count": "방문 수"
+    }
+  },
+  "generic": {
+    "empty": "데이터 없음",
+    "copyright": "저작권",
+    "submit": "제출",
+    "placeholders": {
+      "search": "검색",
+      "input_feedback": "피드백을 입력하세요"
+    },
+    "buttons": {
+      "close": "닫기",
+      "signout": "로그아웃",
+      "signin": "로그인"
+    }
+  }
+}

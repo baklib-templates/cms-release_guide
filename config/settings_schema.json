@@ -4,7 +4,7 @@
     "theme_name": "guide",
     "theme_label": "t:schema.theme_label",
     "theme_description": "t:schema.theme_description",
-    "theme_version": "1.2.0",
+    "theme_version": "2.0.1",
     "theme_scope": "cms",
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/release-guide",
@@ -21,8 +21,20 @@
         "value": "zh-CN"
       },
       {
+        "name": "中文繁體",
+        "value": "zh-TW"
+      },
+      {
+        "name": "한국어",
+        "value": "ko"
+      },
+      {
         "name": "English",
-        "value": "en-US"
+        "value": "en"
+      },
+      {
+        "name": "日本語",
+        "value": "ja"
       }
     ],
     "recommendations": {

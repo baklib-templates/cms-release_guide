@@ -1,0 +1,29 @@
+{
+  "snippets": {
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "全部"
+      }
+    },
+    "page": {
+      "current_version": "當前版本",
+      "visit_count": "訪問量"
+    }
+  },
+  "generic": {
+    "empty": "暫無數據",
+    "copyright": "版權所有",
+    "submit": "提交",
+    "placeholders": {
+      "search": "搜索",
+      "input_feedback": "請輸入反饋內容"
+    },
+    "buttons": {
+      "close": "關閉",
+      "signout": "退出登錄",
+      "signin": "登錄"
+    }
+  }
+}

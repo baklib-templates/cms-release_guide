@@ -1,6 +1,6 @@
 {
   "name": "guide",
-  "version": "1.1.1",
+  "version": "2.0.1",
   "license": "MIT",
   "scripts": {
     "build": "npm-run-all --parallel build:css build:js",

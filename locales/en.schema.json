@@ -1,25 +1,25 @@
 {
   "theme_label": "Release Guide Template",
-  "theme_description": "A small CMS content management system for building product updates, announcements, news, blogs, logs, FAQs, etc.",
+  "theme_description": "Small CMS content management system for building product updates, announcements, news, blogs, logs, FAQs, etc.",
   "templates": {
     "page": {
       "name": "Article Page",
-      "description": "Article Page Template",
+      "description": "Article page template",
       "settings": {
-        "title": {
+        "title":{
           "label": "Title",
-          "info": "Displayed above the main content as the article title"
+          "info": "Article title displayed above the content"
         },
-        "description": {
+        "description":{
           "label": "Summary"
         },
-        "tags": {
+        "tags":{
           "label": "Tags"
         },
-        "thumb_image_url": {
+        "thumb_image_url":{
           "label": "Cover Image"
         },
-        "content": {
+        "content":{
           "label": "Page Content"
         }
       }
@@ -29,32 +29,32 @@
     "name": "General Settings",
     "settings": {
       "slogan": {
-        "label": "One-line Description",
-        "default": "Welcome to the Product Release Guide"
+        "label": "Slogan",
+        "default": "Welcome to Product Release Guide"
       },
       "company_name": {
         "label": "Company Name",
         "default": "Baklib.cn",
-        "info": "Displayed at the bottom of the page footer"
+        "info": "Displayed in the footer section"
       },
       "copyright_info": {
-        "label": "ICP/ Copyright Info",
-        "placeholder": "ICP 15035023"
+        "label": "Copyright/ICP Information",
+        "placeholder": "ICP No.15035023"
       },
-      "is_allow_feedback": {
+      "is_allow_feedback":{
         "label": "Show User Feedback"
       },
-      "is_show_visit_count": {
+      "is_show_visit_count":{
         "label": "Show Visit Count"
       },
-      "is_allow_header": {
+      "is_allow_header":{
         "label": "Show Header Section"
       },
-      "is_allow_footer": {
+      "is_allow_footer":{
         "label": "Show Footer Section"
       },
       "sort_rule": {
-        "label": "Homepage Page List Display Order",
+        "label": "Home Page List Display Rules",
         "options": {
           "created_at_desc": "By Creation Date - Descending",
           "created_at_asc": "By Creation Date - Ascending",
@@ -62,7 +62,7 @@
           "edited_at_asc": "By Update Date - Ascending",
           "visit_count_desc": "By Visit Count (High to Low)",
           "visit_count_asc": "By Visit Count (Low to High)",
-          "manual": "Manual Sorting"
+          "manual": "Manual Sort"
         }
       }
     }
@@ -73,17 +73,17 @@
       "head_html": {
         "label": "Custom HTML in <head></head> tags",
         "info": "Supports HTML tags and limited TailwindCSS style code",
-        "placeholder": "Usually used for inserting analytics, chatbot, or other embedded code"
+        "placeholder": "Usually used for analytics, customer service bot, etc."
       },
       "header_menu_html": {
         "label": "Insert HTML in Top Navigation Area",
         "info": "Supports HTML tags and limited TailwindCSS style code",
-        "placeholder": "Usually used for inserting navigation links to other company sites"
+        "placeholder": "Usually used for company website navigation links"
       },
       "footer_menu_html": {
         "label": "Insert HTML in Footer Area",
         "info": "Supports HTML tags and limited TailwindCSS style code",
-        "placeholder": "Usually used for inserting external navigation links, friend links, SEO links, etc."
+        "placeholder": "Usually used for external navigation links, friend links, SEO optimization links, etc."
       }
     }
   }
