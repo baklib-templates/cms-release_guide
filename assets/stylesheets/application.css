@@ -4280,9 +4280,6 @@
       }
     }
   }
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
-  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -5396,9 +5393,6 @@
   .h-\[110px\] {
     height: 110px;
   }
-  .h-auto {
-    height: auto;
-  }
   .h-fit {
     height: fit-content;
   }
@@ -5407,6 +5401,9 @@
   }
   .h-screen {
     height: 100vh;
+  }
+  .min-h-0 {
+    min-height: calc(var(--spacing) * 0);
   }
   .min-h-\[2px\] {
     min-height: 2px;
@@ -6685,9 +6682,6 @@
     color: var(--color-warning-content);
     --alert-color: var(--color-warning);
   }
-  .\!border-slate-200 {
-    border-color: var(--color-slate-200) !important;
-  }
   .\!border-slate-400 {
     border-color: var(--color-slate-400) !important;
   }
@@ -6702,9 +6696,6 @@
   }
   .border-slate-200 {
     border-color: var(--color-slate-200);
-  }
-  .border-slate-400 {
-    border-color: var(--color-slate-400);
   }
   .border-t-transparent {
     border-top-color: transparent;
@@ -7244,9 +7235,6 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
-  .py-8 {
-    padding-block: calc(var(--spacing) * 8);
-  }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
   }
@@ -7276,9 +7264,6 @@
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
   }
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
@@ -8943,11 +8928,6 @@
       outline-style: none;
     }
   }
-  .sm\:-mx-6 {
-    @media (width >= 40rem) {
-      margin-inline: calc(var(--spacing) * -6);
-    }
-  }
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
@@ -8990,11 +8970,6 @@
   .sm\:px-0 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 0);
-    }
-  }
-  .sm\:pb-8 {
-    @media (width >= 40rem) {
-      padding-bottom: calc(var(--spacing) * 8);
     }
   }
   .sm\:text-2xl {
@@ -9076,11 +9051,6 @@
       padding-inline: calc(var(--spacing) * 4);
     }
   }
-  .md\:py-4 {
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 4);
-    }
-  }
   .md\:text-2xl {
     @media (width >= 48rem) {
       font-size: var(--text-2xl);
@@ -9147,11 +9117,6 @@
         background-color: var(--color-base-100);
         box-shadow: 0 1px 3px 0 oklch(0% 0 0/0.1), 0 1px 2px -1px oklch(0% 0 0/0.1);
       }
-    }
-  }
-  .lg\:-mx-8 {
-    @media (width >= 64rem) {
-      margin-inline: calc(var(--spacing) * -8);
     }
   }
   .lg\:mx-0 {
