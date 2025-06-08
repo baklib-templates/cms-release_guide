@@ -16,7 +16,8 @@
     "404": "404 页面找不到",
     "403": "403 无访问权限",
     "copyright": "版权所有",
-    "current_version": "当前版本"
+    "current_version": "当前版本",
+    "visits": "views"
   },
   "placeholders": {
     "search": "站内搜索",
