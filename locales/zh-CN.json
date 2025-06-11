@@ -14,6 +14,9 @@
   },
   "generic": {
     "empty": "暂无数据",
+    "all_tags": "所有标签",
+    "recent_updates": "最近更新",
+    "back_to_home": "返回首页",
     "copyright": "版权所有",
     "submit": "提交",
     "placeholders": {

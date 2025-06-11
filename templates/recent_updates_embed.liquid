@@ -1,0 +1,111 @@
+{% layout false %}
+{% assign pages = site.pages['/'].children_in_list | order_by: '-created_at' | limit: 5 %}
+
+<!DOCTYPE html>
+<html class="" lang="{{ site.language }}">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Baklib">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% meta_tags %}
+    {{ 'stylesheets/application.css' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
+    {{ 'baklib/shared/main.css' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
+    {{ 'baklib/shared/main.js' | asset_url | stylesheet_tag: data-turbo-track: 'reload' }}
+    {{ 'javascripts/application.js' | asset_url | script_tag: defer: true, data-turbo-track: 'reload' }}
+    {%# TIPS：在低代码平台开发时，请打开下一行代码注释 %}
+    {% if false %} {{ 'javascripts/cdn.tailwindcss.js' | asset_url | script_tag: data-turbo-track: 'reload' }} {% endif %}
+    {{ site.settings.head_html }}
+  </head>
+
+  <body class="relative min-h-screen font-sans text-gray-800 bg-white">
+    <div class="relative flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+    <!-- 网格背景 -->
+      <div class="absolute inset-y-0 w-[1102px] left-1/2 -translate-x-1/2 -z-10 pointer-events-none blur-3xl"
+        aria-hidden="true">
+        <div
+          class="absolute w-[960px] h-24 top-12 animate-[swing_8s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-indigo-600 before:-rotate-[42deg]">
+        </div>
+        <div
+          class="absolute w-[960px] h-24 -top-12 -left-28 animate-[swing_15s_-1s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-400 before:-rotate-[42deg]">
+        </div>
+        <div
+          class="absolute w-[960px] h-16 top-36 left-80 animate-[swing_7s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-400 before:-rotate-[42deg]">
+        </div>
+        <div
+          class="absolute w-[960px] h-64 top-[820px] left-44 animate-[swing_10s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-indigo-600/30 dark:before:via-indigo-400/30 before:-rotate-[42deg]">
+        </div>
+        <div
+          class="absolute w-[480px] h-12 top-[970px] left-[550px] animate-[swing_15s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-950 before:-rotate-[42deg]">
+        </div>
+        <div
+          class="absolute w-[960px] h-16 top-[820px] left-24 animate-[swing_9s_-3s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-900 before:-rotate-[42deg]">
+        </div>
+      </div>
+      <!-- 顶部导航 -->
+      <div class="flex relative z-10 justify-between items-center px-8 pt-8">
+        <a href="/" class="flex items-center text-xs tracking-widest text-gray-500 transition hover:text-gray-900">
+          <span class="mr-2">&larr;</span> {{ 'generic.back_to_home' | t }}
+        </a>
+      </div>
+
+      <!-- 主内容 -->
+      <div class="flex relative z-10 flex-col items-center mt-12">
+        <div class="flex flex-col items-center">
+          <h1 class="mb-2 text-4xl font-extrabold tracking-tight text-gray-900">{{ 'generic.recent_updates' | t }}</h1>
+        </div>
+      </div>
+
+      <div class="overflow-visible pb-4 h-auto min-h-screen">
+        <div class="max-w-5xl mx-auto relative  flex flex-col sm:flex-row sm:space-x-2 px-2 sm:px-0  pt-[150px]">
+          <div class="w-full space-y-2 lg:space-y-4 -mt-[60px]">
+              {% for page in pages %}
+                {% comment %} Card 图文列表展示效果 {% endcomment %}
+                <article class="block p-4 w-full break-all bg-white rounded-lg shadow">
+                  <div class="flex items-center space-x-2 text-xs font-light shrink-0">
+                    {%- if page.published_at -%}
+                      <div class="flex items-center space-x-1 text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M7 3V1H9V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V9H20V5H17V7H15V5H9V7H7V5H4V19H10V21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7ZM17 12C14.7909 12 13 13.7909 13 16C13 18.2091 14.7909 20 17 20C19.2091 20 21 18.2091 21 16C21 13.7909 19.2091 12 17 12ZM11 16C11 12.6863 13.6863 10 17 10C20.3137 10 23 12.6863 23 16C23 19.3137 20.3137 22 17 22C13.6863 22 11 19.3137 11 16ZM16 13V16.4142L18.2929 18.7071L19.7071 17.2929L18 15.5858V13H16Z"></path></svg>
+                        <span class="flex justify-center items-center font-mono text-xs">{{ page.published_at | date: "%Y-%m-%d" }}</span>
+                      </div>
+                    {%- endif -%}
+
+                    {% for tag in page.settings.tags %}
+                      <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-xs text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                        {{ tag.name }}
+                      </a>
+                    {% endfor %}
+                  </div>
+                  {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
+                    <div class="overflow-hidden rounded-lg bg-primary-50">
+                      <a href="{{ page.path }}" class="block">
+                        <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+                      </a>
+                    </div>
+                  {%- endif  -%}
+                  <h2 class="my-3 text-lg font-bold md:text-2xl text-slate-800 hover:underline">
+                    <a href="{{ page.path }}">{{ page.settings.title }}</a>
+                  </h2>
+
+                  {% if page.settings.description %}
+                    <p class="mt-6 leading-normal text-slate-600">{{ page.settings.description }}</p>
+                  {% endif  %}
+
+                  {%- render "sub_page_list", page: page -%}
+                </article>
+              {% else %}
+                {{ 'generic.empty' | t }}
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% schema %}
+  {
+    "name": "recent_updates_embed",
+    "thumb_url": "images/theme/recent_updates_embed.png",
+    "sub_page_templates": []
+  }
+{% endschema %}

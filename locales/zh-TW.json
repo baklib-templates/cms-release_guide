@@ -14,6 +14,9 @@
   },
   "generic": {
     "empty": "暫無數據",
+    "all_tags": "所有標籤",
+    "recent_updates": "最新更新",
+    "back_to_home": "返回首頁",
     "copyright": "版權所有",
     "submit": "提交",
     "placeholders": {

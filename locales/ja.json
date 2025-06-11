@@ -14,6 +14,9 @@
   },
   "generic": {
     "empty": "データなし",
+    "all_tags": "すべてのタグ",
+    "recent_updates": "最新の更新",
+    "back_to_home": "ホームに戻る",
     "copyright": "著作権",
     "submit": "送信",
     "placeholders": {
