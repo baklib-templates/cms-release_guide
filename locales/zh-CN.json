@@ -1,5 +1,17 @@
 {
   "snippets": {
+    "feedback_form": {
+      "title": "提交反馈",
+      "message_label": "留言",
+      "message_placeholder": "请输入反馈内容",
+      "message_required": "反馈内容不能为空",
+      "submit": "提交",
+      "cancel": "取消"
+    },
+    "feedback_button": {
+      "title_posted": "感谢您的反馈",
+      "title_unposted": "提交反馈"
+    }
   },
   "templates": {
     "index": {
@@ -13,6 +25,7 @@
     }
   },
   "generic": {
+    "feedback_created_at": "上次反馈于",
     "empty": "暂无数据",
     "all_tags": "所有标签",
     "recent_updates": "最近更新",

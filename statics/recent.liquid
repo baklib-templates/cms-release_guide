@@ -2,7 +2,7 @@
 {% assign pages = site.pages['/'].children_in_list | order_by: '-created_at' | limit: 5 %}
 
 <!DOCTYPE html>
-<html class="" lang="{{ site.language }}">
+<html lang="{{ site.language }}">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Baklib">
@@ -17,30 +17,31 @@
     {{ site.settings.head_html }}
   </head>
 
-  <body class="relative min-h-screen font-sans text-gray-800 bg-white">
+  <body class="relative min-h-screen font-sans text-gray-800">
     <div class="relative flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-    <!-- 网格背景 -->
+      <!-- 网格背景 -->
       <div class="absolute inset-y-0 w-[1102px] left-1/2 -translate-x-1/2 -z-10 pointer-events-none blur-3xl"
         aria-hidden="true">
         <div
-          class="absolute w-[960px] h-24 top-12 animate-[swing_8s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-indigo-600 before:-rotate-[42deg]">
+          class="absolute w-[960px] h-24 top-12 animate-[swing_8s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-primary-600 before:-rotate-[42deg]">
         </div>
         <div
-          class="absolute w-[960px] h-24 -top-12 -left-28 animate-[swing_15s_-1s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-400 before:-rotate-[42deg]">
+          class="absolute w-[960px] h-24 -top-12 -left-28 animate-[swing_15s_-1s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-400 before:-rotate-[42deg]">
         </div>
         <div
-          class="absolute w-[960px] h-16 top-36 left-80 animate-[swing_7s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-400 before:-rotate-[42deg]">
+          class="absolute w-[960px] h-16 top-36 left-80 animate-[swing_7s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-400 before:-rotate-[42deg]">
         </div>
         <div
-          class="absolute w-[960px] h-64 top-[820px] left-44 animate-[swing_10s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-indigo-600/30 dark:before:via-indigo-400/30 before:-rotate-[42deg]">
+          class="absolute w-[960px] h-64 top-[820px] left-44 animate-[swing_10s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-primary-600/30 dark:before:via-primary-400/30 before:-rotate-[42deg]">
         </div>
         <div
-          class="absolute w-[480px] h-12 top-[970px] left-[550px] animate-[swing_15s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-950 before:-rotate-[42deg]">
+          class="absolute w-[480px] h-12 top-[970px] left-[550px] animate-[swing_15s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-950 before:-rotate-[42deg]">
         </div>
         <div
-          class="absolute w-[960px] h-16 top-[820px] left-24 animate-[swing_9s_-3s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-indigo-900 before:-rotate-[42deg]">
+          class="absolute w-[960px] h-16 top-[820px] left-24 animate-[swing_9s_-3s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-900 before:-rotate-[42deg]">
         </div>
       </div>
+
       <!-- 顶部导航 -->
       <div class="flex relative z-10 justify-between items-center px-8 pt-8">
         <a href="/" class="flex items-center text-xs tracking-widest text-gray-500 transition hover:text-gray-900">
@@ -102,10 +103,3 @@
   </body>
 </html>
 
-{% schema %}
-  {
-    "name": "recent_updates_embed",
-    "thumb_url": "images/theme/recent_updates_embed.png",
-    "sub_page_templates": []
-  }
-{% endschema %}

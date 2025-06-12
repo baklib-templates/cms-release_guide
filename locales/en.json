@@ -1,5 +1,17 @@
 {
   "snippets": {
+    "feedback_form": {
+      "title": "Submit Feedback",
+      "message_label": "Message",
+      "message_placeholder": "Please enter your feedback",
+      "message_required": "Feedback cannot be empty",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "feedback_button": {
+      "title_posted": "Thank you for your feedback",
+      "title_unposted": "Submit Feedback"
+    }
   },
   "templates": {
     "index": {
@@ -13,6 +25,7 @@
     }
   },
   "generic": {
+    "feedback_created_at": "Last Feedback At",
     "empty": "No Data",
     "all_tags": "All Tags",
     "recent_updates": "Recent Updates",
