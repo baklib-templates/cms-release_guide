@@ -1,0 +1,90 @@
+{
+  "theme_label": "リリースガイドテンプレート",
+  "theme_description": "製品アップデート、お知らせ、ニュース、ブログ、ログ、FAQなどを構築するための小型CMSコンテンツ管理システム。",
+  "templates": {
+    "page": {
+      "name": "記事ページ",
+      "description": "記事ページテンプレート",
+      "settings": {
+        "title":{
+          "label": "タイトル",
+          "info": "コンテンツ上部に表示される記事タイトル"
+        },
+        "description":{
+          "label": "概要"
+        },
+        "tags":{
+          "label": "タグ"
+        },
+        "thumb_image_url":{
+          "label": "カバー画像"
+        },
+        "content":{
+          "label": "ページコンテンツ"
+        }
+      }
+    }
+  },
+  "generic": {
+    "name": "一般設定",
+    "settings": {
+      "slogan": {
+        "label": "キャッチフレーズ",
+        "default": "製品リリースガイドへようこそ"
+      },
+      "company_name": {
+        "label": "会社名",
+        "default": "Baklib.cn",
+        "info": "フッター部分に表示"
+      },
+      "copyright_info": {
+        "label": "著作権/ICP情報",
+        "placeholder": "ICP No.15035023"
+      },
+      "is_allow_feedback":{
+        "label": "ユーザーフィードバックを表示"
+      },
+      "is_show_visit_count":{
+        "label": "アクセス数を表示"
+      },
+      "is_allow_header":{
+        "label": "ヘッダー部分を表示"
+      },
+      "is_allow_footer":{
+        "label": "フッター部分を表示"
+      },
+      "sort_rule": {
+        "label": "ホームページリスト表示ルール",
+        "options": {
+          "created_at_desc": "作成日時 - 降順",
+          "created_at_asc": "作成日時 - 昇順",
+          "edited_at_desc": "更新日時 - 降順",
+          "edited_at_asc": "更新日時 - 昇順",
+          "visit_count_desc": "アクセス数（多い順）",
+          "visit_count_asc": "アクセス数（少ない順）",
+          "manual": "手動ソート"
+        }
+      }
+    }
+  },
+  "custom_html": {
+    "name": "カスタムHTMLコード",
+    "settings": {
+      "head_html": {
+        "label": "<head></head>タグ内のカスタムHTML",
+        "info": "HTMLタグと限定的なTailwindCSSスタイルコードをサポート",
+        "placeholder": "通常、アクセス解析、カスタマーサービスボットなどを挿入"
+      },
+      "header_menu_html": {
+        "label": "トップナビゲーション領域にHTMLを挿入",
+        "info": "HTMLタグと限定的なTailwindCSSスタイルコードをサポート",
+        "placeholder": "通常、会社の他のウェブサイトのナビゲーションリンクを挿入"
+      },
+      "footer_menu_html": {
+        "label": "フッター領域にHTMLを挿入",
+        "info": "HTMLタグと限定的なTailwindCSSスタイルコードをサポート",
+        "placeholder": "通常、外部ナビゲーションリンク、友情リンク、SEO最適化リンクなどを挿入"
+      }
+    }
+  }
+}

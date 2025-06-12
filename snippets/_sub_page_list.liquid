@@ -1,11 +1,12 @@
 {% comment %} 文章下级文章列表 {% endcomment %}
-{%- assign sub_pages = page.children_in_list -%}
-{%- assign sub_pages_count = sub_pages | size -%}
+{%- assign page_per = per | default: 15 -%}
+{%- assign sub_pages = page.children_in_list | order_by: '-created_at' | limit: page_per %}
+{%- assign sub_pages_count = page.children_in_list | size -%}
 
 {%- if sub_pages_count > 0 -%}
-  <ul class="mt-4 space-y-1 overflow-hidden list-none rounded">
+  <ul class="mt-1 space-y-1 overflow-hidden list-none rounded">
     {% for page in sub_pages %}
-      <li class="rounded group hover:bg-primary/10 bg-slate-100 dark:bg-slate-700">
+      <li class="rounded group hover:bg-primary/10 bg-slate-100">
         <a href="{{ page.path }}" class="flex items-center py-1.5 px-2 space-x-4">
           <h3 class="flex-grow w-0 truncate group-hover:text-primary">{{ page.link_text }}</h3>
           <span class="inline-block w-0 h-0 border-[5px] border-l-primary border-t-transparent border-r-transparent border-b-transparent flex-shrink-0"></span>

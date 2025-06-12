@@ -1,13 +1,28 @@
-<div class="w-full py-4 px-4 text-sm text-gray-100">
-    <footer class="max-w-5xl mx-auto flex">
-        <div class="flex flex-col sm:items-center flex-1 space-y-4">
-            <div class="flex flex-col sm:flex-row items-start justify-center space-y-1 sm:space-y-0 sm:space-x-2 max-w-fit">
-                {{ site.settings.footer_menu_html }}
-            </div>
-            <div class="flex flex-col items-start justify-center max-w-fix md:justify-between">
-                <div> {{ site.name }} {{ 'generic.copyright' | t }} {{ site.settings.copyright_info }} </div>
-            </div>
+{% assign footer_menu_html = site.settings.footer_menu_html | presence  %}
+{% assign company_name = site.settings.company_name | presence  %}
+{% assign copyright_info = site.settings.copyright_info | presence %}
+
+{% if footer_menu_html or company_name or copyright_info %}
+  <footer
+    id="footer"
+    class="footer footer-center p-6 text-gray-100 text-sm"
+  >
+    <div class="items-center justify-between space-y-2">
+      {% # 自定义导航菜单 %}
+      {% if footer_menu_html %}
+        <div class="flex justify-center space-x-3">
+          {{ footer_menu_html }}
         </div>
-        <div class="hidden sm:block w-64"></div>
-    </footer>
-</div>
+      {% endif %}
+      {% # 底部备案和链接 %}
+			<div class="flex justify-center space-x-3">
+				{% if company_name %}
+					<span>© {{ company_name }} {{ 'generic.copyright' | t }}</span>
+				{% endif %}
+				{% if copyright_info %}
+					<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ copyright_info }}</a>
+				{% endif %}
+			</div>
+    </div>
+  </footer>
+{% endif %}

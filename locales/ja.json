@@ -1,0 +1,32 @@
+{
+  "snippets": {
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "すべて"
+      }
+    },
+    "page": {
+      "current_version": "現在のバージョン",
+      "visit_count": "アクセス数"
+    }
+  },
+  "generic": {
+    "empty": "データなし",
+    "all_tags": "すべてのタグ",
+    "recent_updates": "最新の更新",
+    "back_to_home": "ホームに戻る",
+    "copyright": "著作権",
+    "submit": "送信",
+    "placeholders": {
+      "search": "検索",
+      "input_feedback": "フィードバックを入力してください"
+    },
+    "buttons": {
+      "close": "閉じる",
+      "signout": "ログアウト",
+      "signin": "ログイン"
+    }
+  }
+}
