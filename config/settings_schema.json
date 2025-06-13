@@ -4,7 +4,7 @@
     "theme_name": "guide",
     "theme_label": "t:theme_label",
     "theme_description": "t:theme_description",
-    "theme_version": "1.1.2",
+    "theme_version": "1.2.0",
     "theme_scope": "cms",
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/release-guide",
