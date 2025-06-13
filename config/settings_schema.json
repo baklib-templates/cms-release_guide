@@ -2,9 +2,10 @@
   {
     "name": "theme_info",
     "theme_name": "guide",
-    "theme_label": "t:theme_label",
-    "theme_description": "t:theme_description",
-    "theme_version": "1.2.0",
+    "theme_label": "t:schema.theme_label",
+    "theme_description": "t:schema.theme_description",
+    "theme_version": "2.0.1",
+    "theme_syntax_version": "v2",
     "theme_scope": "cms",
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/release-guide",
@@ -21,8 +22,20 @@
         "value": "zh-CN"
       },
       {
+        "name": "中文繁體",
+        "value": "zh-TW"
+      },
+      {
+        "name": "한국어",
+        "value": "ko"
+      },
+      {
         "name": "English",
-        "value": "en-US"
+        "value": "en"
+      },
+      {
+        "name": "日本語",
+        "value": "ja"
       }
     ],
     "recommendations": {
@@ -71,78 +84,94 @@
     }
   },
   {
-    "name": "t:settings_schema.generic.name",
+    "name": "t:schema.generic.name",
     "settings": [
       {
         "id": "slogan",
         "type": "text",
-        "label": "t:settings_schema.generic.settings.slogan.label",
-        "default": "👋 What Can We Help?"
+        "label": "t:schema.generic.settings.slogan.label",
+        "default": "t:schema.generic.settings.slogan.default"
+      },
+      {
+        "id": "company_name",
+        "label": "t:schema.generic.settings.company_name.label",
+        "type": "text",
+        "default": "t:schema.generic.settings.company_name.default",
+        "info": "t:schema.generic.settings.company_name.info"
       },
       {
         "id": "copyright_info",
         "type": "text",
-        "label": "t:settings_schema.generic.settings.copyright_info.label",
-        "placeholder": "t:settings_schema.generic.settings.copyright_info.placeholder"
+        "label": "t:schema.generic.settings.copyright_info.label",
+        "placeholder": "t:schema.generic.settings.copyright_info.placeholder"
       },
       {
         "id": "sort_rule",
         "type": "select",
-        "label": "首页页面列表展示规则",
-        "choices": [{"label":"按创建日期-倒序","value":"-created_at"},{"label":"按创建日期-正序","value":"created_at"},{"label":"按更新日期-倒序","value":"-edited_at"},{"label":"按更新日期-倒序","value":"edited_at"},{"label":"按访问量（从多到少）","value":"-visit_count"},{"label":"按访问量（从少到多）","value":"visit_count"},{"label":"手动排序","value":""}],
+        "label": "t:schema.generic.settings.sort_rule.label",
+        "choices": [
+          {"label": "t:schema.generic.settings.sort_rule.options.created_at_desc", "value": "-created_at"},
+          {"label": "t:schema.generic.settings.sort_rule.options.created_at_asc", "value": "created_at"},
+          {"label": "t:schema.generic.settings.sort_rule.options.edited_at_desc", "value": "-edited_at"},
+          {"label": "t:schema.generic.settings.sort_rule.options.edited_at_asc", "value": "edited_at"},
+          {"label": "t:schema.generic.settings.sort_rule.options.visit_count_desc", "value": "-visit_count"},
+          {"label": "t:schema.generic.settings.sort_rule.options.visit_count_asc", "value": "visit_count"},
+          {"label": "t:schema.generic.settings.sort_rule.options.manual", "value": ""}
+        ],
         "default": "-created_at"
       },
       {
         "id": "is_allow_feedback",
         "type": "checkbox",
-        "label": "t:settings_schema.generic.settings.is_allow_feedback.label",
+        "label": "t:schema.generic.settings.is_allow_feedback.label",
+        "default": true
+      },
+      {
+        "id": "is_show_visit_count",
+        "type": "checkbox",
+        "label": "t:schema.generic.settings.is_show_visit_count.label",
         "default": true
       },
       {
         "id": "is_allow_header",
         "type": "checkbox",
-        "label": "t:settings_schema.generic.settings.is_allow_header.label",
+        "label": "t:schema.generic.settings.is_allow_header.label",
         "default": true
       },
       {
         "id": "is_allow_footer",
         "type": "checkbox",
-        "label": "t:settings_schema.generic.settings.is_allow_footer.label",
+        "label": "t:schema.generic.settings.is_allow_footer.label",
         "default": true
       }
     ]
   },
   {
-    "name": "t:settings_schema.nav.nav_title",
-    "settings": [
-      {
-        "id": "header_menu_html",
-        "type": "html",
-        "label": "t:settings_schema.nav.settings.header_menu_html.label",
-        "info": "t:settings_schema.nav.settings.header_menu_html.info",
-        "rows": 10,
-        "placeholder": "<a href='#'> title </a>"
-      },
-      {
-        "id": "footer_menu_html",
-        "type": "html",
-        "label": "t:settings_schema.nav.settings.footer_menu_html.label",
-        "info": "t:settings_schema.nav.settings.footer_menu_html.info",
-        "rows": 10,
-        "placeholder": "<a href='#'> title </a>"
-      }
-    ]
-  },
-  {
-    "name": "t:settings_schema.nav.head_title",
+    "name": "t:schema.custom_html.name",
     "settings": [
       {
         "id": "head_html",
         "type": "html",
-        "label": "t:settings_schema.nav.settings.head_html.label",
-        "info": "t:settings_schema.nav.settings.head_html.info",
+        "label": "t:schema.custom_html.settings.head_html.label",
+        "info": "t:schema.custom_html.settings.head_html.info",
         "rows": 10,
-        "placeholder": "t:settings_schema.nav.settings.head_html.placeholder"
+        "placeholder": "t:schema.custom_html.settings.head_html.placeholder"
+      },
+      {
+        "id": "header_menu_html",
+        "type": "html",
+        "label": "t:schema.custom_html.settings.header_menu_html.label",
+        "info": "t:schema.custom_html.settings.header_menu_html.info",
+        "rows": 6,
+        "placeholder": "t:schema.custom_html.settings.header_menu_html.placeholder"
+      },
+      {
+        "id": "footer_menu_html",
+        "type": "html",
+        "label": "t:schema.custom_html.settings.footer_menu_html.label",
+        "info": "t:schema.custom_html.settings.footer_menu_html.info",
+        "rows": 6,
+        "placeholder": "t:schema.custom_html.settings.footer_menu_html.placeholder"
       }
     ]
   }

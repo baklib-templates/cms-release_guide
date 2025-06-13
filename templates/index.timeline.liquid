@@ -1,0 +1,213 @@
+<!-- from cruip mosaic theme -->
+{% assign pages = site.pages['/'].children_in_list | order_by: '-published_at' %}
+{% assign avatar = 'images/avatar.png' | asset_url %}
+
+<style>
+  html {
+    background: none;
+  }
+  footer {
+    color: #374151;
+  }
+  body {
+    background: none;
+  }
+  body > main {
+    background: none;
+  }
+</style>
+<div class="antialiased tracking-tight text-gray-800 font-inter dark:bg-gray-900 dark:text-gray-200" >
+  <!-- Page wrapper -->
+  <div class="relative flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+
+    <!-- Bg coloured shapes -->
+    <div class="absolute inset-y-0 w-[1102px] left-1/2 -translate-x-1/2 -z-10 pointer-events-none blur-3xl"
+      aria-hidden="true">
+      <div
+        class="absolute w-[960px] h-24 top-12 animate-[swing_8s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-primary-600 before:-rotate-[42deg]">
+      </div>
+      <div
+        class="absolute w-[960px] h-24 -top-12 -left-28 animate-[swing_15s_-1s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-400 before:-rotate-[42deg]">
+      </div>
+      <div
+        class="absolute w-[960px] h-16 top-36 left-80 animate-[swing_7s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-400 before:-rotate-[42deg]">
+      </div>
+      <div
+        class="absolute w-[960px] h-64 top-[820px] left-44 animate-[swing_10s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-primary-600/30 dark:before:via-primary-400/30 before:-rotate-[42deg]">
+      </div>
+      <div
+        class="absolute w-[480px] h-12 top-[970px] left-[550px] animate-[swing_15s_-2s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-950 before:-rotate-[42deg]">
+      </div>
+      <div
+        class="absolute w-[960px] h-16 top-[820px] left-24 animate-[swing_9s_-3s_ease-in-out_infinite] before:absolute before:inset-0 before:rounded-tl-full before:rounded-br-full before:bg-gradient-to-b before:from-transparent before:to-transparent before:via-white dark:before:via-primary-900 before:-rotate-[42deg]">
+      </div>
+    </div>
+
+
+    <!-- Page content -->
+    <main class="grow">
+      <section>
+        <div class="pt-16 pb-12 md:pt-28 md:pb-20">
+          <div class="px-4 sm:px-6">
+            <div class="mx-auto max-w-3xl">
+              <div class="text-center">
+                <div
+                  class="relative flex items-center justify-center gap-4 mb-5 before:h-px before:w-24 before:border-b before:[border-image:linear-gradient(to_left,theme(colors.indigo.300),transparent)1] dark:before:[border-image:linear-gradient(to_left,theme(colors.indigo.300/.16),transparent)1] before:shadow-sm before:shadow-white/20 dark:before:shadow-none after:h-px after:w-24 after:border-b after:[border-image:linear-gradient(to_right,theme(colors.indigo.300),transparent)1] dark:after:[border-image:linear-gradient(to_right,theme(colors.indigo.300/.16),transparent)1] after:shadow-sm after:shadow-white/20 dark:after:shadow-none">
+                  <div
+                    class="relative text-sm font-medium text-gray-700 bg-white dark:bg-gray-700 inline-flex rounded-lg whitespace-nowrap px-3 py-[3px] tracking-normal before:absolute before:inset-0 before:rounded-lg before:[background-image:linear-gradient(120deg,transparent_0%,theme(colors.indigo.400/.12)_33%,theme(colors.pink.400/.12)_66%,theme(colors.amber.200/.12)_100%)] dark:before:[background-image:linear-gradient(120deg,theme(colors.indigo.400/.16),theme(colors.indigo.600/.16)_50%,transparent_100%)] shadow">
+                    <!-- Border with dots in corners -->
+                    <div
+                      class="absolute -inset-1.5 bg-indigo-500/15 dark:bg-gray-800/65 rounded-sm -z-10 before:absolute before:inset-y-0 before:left-0 before:w-[7px] before:bg-[length:7px_7px] before:[background-position:top_center,bottom_center] before:bg-no-repeat before:[background-image:radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px)] dark:before:[background-image:radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px)] after:absolute after:inset-y-0 after:right-0 after:w-[7px] after:bg-[length:7px_7px] after:[background-position:top_center,bottom_center] after:bg-no-repeat after:[background-image:radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.indigo.500/.56)_0.5px,transparent_0.5px)] dark:after:[background-image:radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px),radial-gradient(circle_at_center,theme(colors.gray.600/.56)_0.5px,transparent_0.5px)]"
+                      aria-hidden="true"></div>
+                    <span
+                      class="relative text-gray-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-500 dark:to-indigo-50">What's
+                      New</span>
+                  </div>
+                </div>
+
+                <h1
+                  class="pb-4 text-5xl font-bold text-gray-800 font-inter-tight md:text-6xl dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200">
+                  {{ page.settings.title }}</h1>
+                <p class="text-lg text-gray-700 dark:text-gray-400">
+                  {{ page.settings.description  }}
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main content -->
+      <section>
+        <div class="pb-12 md:pb-20">
+          <div class="px-4 sm:px-6">
+
+            <div class="mx-auto max-w-5xl">
+              <div class="md:flex md:justify-between" data-controller="load-more" >
+
+                <!-- Sidebar -->
+                <aside class="mb-12 md:mb-0 md:w-[276px] md:mr-8 md:shrink-0 ">
+                  <div class="mb-3 text-xs font-semibold tracking-normal uppercase text-gray-500/80"> 选择标签
+                  </div>
+                  <ul class="space-y-0.5" x-data="{ }">
+                    <li>
+                      <a class="flex items-center px-4 space-x-4 h-9 text-sm font-medium text-gray-800 transition-colors dark:text-gray-200"
+                      :class="'{{ params.tag_name }}' == '' ? 'bg-gradient-to-tr shadow from-white/70 to-white/50 dark:bg-gradient-to-b dark:from-gray-700/50 dark:to-gray-700/40 shadow-black/5' : 'hover:bg-indigo-50/50 dark:hover:bg-gray-700/20'"
+                        href="/">
+                        <div class="w-2 h-2 bg-current rounded-full" style="background-color: "></div>
+                        <span> {{ 'generic.all_tags' | t }} </span>
+                      </a>
+                    </li>
+                    {% for tag in site.tags %}
+                      <li>
+                        <a class="flex items-center px-4 space-x-4 h-9 text-sm font-medium text-gray-800 transition-colors dark:text-gray-200"
+                        :class="'{{ params.tag_name }}' === '{{ tag.name }}' ? 'bg-gradient-to-tr shadow from-white/70 to-white/50 dark:bg-gradient-to-b dark:from-gray-700/50 dark:to-gray-700/40 shadow-black/5' : 'hover:bg-indigo-50/50 dark:hover:bg-gray-700/20'"
+                          href="/?tag_name={{ tag.name }}">
+                          <div class="w-2 h-2 bg-current rounded-full" style="background-color: {{ tag.color }}"></div>
+                          <span>{{ tag.name }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </aside>
+
+                <!-- Posts -->
+                {% assign tag_name = params.tag_name | presence %}
+                {% assign has_tag = tag_name | present? %}
+                {% if has_tag %}
+                  {% assign tag = site.tags[params.tag_name] %}
+                  {% assign pages = tag.pages | order_by: '-created_at' %}
+                {% endif %}
+
+                <div class="md:grow">
+                  <div id="pages_container" data-load-more-target="container" class="-my-5 space-y-4">
+                    {% paginate_tag pages, per: 12 %}
+                      {% for page in pages %}
+                        <article
+                          class="relative py-5 pr-4 pl-12 sm:pl-28 group before:absolute before:left-8 sm:before:left-24 before:right-0 before:inset-y-0 before:bg-gradient-to-tr before:from-white/70 before:to-white/50 before:dark:bg-gradient-to-b before:dark:from-gray-700/50 before:dark:to-gray-700/40 before:rounded-lg before:shadow before:shadow-black/5 before:-z-10 even:before:opacity-50">
+                          <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
+                          <header
+                            class="flex flex-col sm:flex-row items-start mb-2 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-[calc(100%+1rem)] before:pl-px before:bg-indigo-300/50 dark:before:bg-indigo-300/15 sm:before:ml-[4.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-400 after:rounded-full sm:after:ml-[4.5rem] after:-translate-x-1/2 after:translate-y-2">
+                            <time
+                              class="inline-flex left-0 justify-center items-center mb-3 w-14 h-6 text-xs font-medium text-white bg-indigo-400 rounded-lg sm:absolute sm:mb-0">  {{ page.published_at | date: "%m-%d"  }}</time>
+                            <h2 class="text-lg font-semibold leading-6 text-gray-800 font-inter-tight dark:text-gray-200">
+                              <a href="{{ page.path }}">{{ page.link_text }}</a>
+                            </h2>
+                          </header>
+                          <!-- Content -->
+                          <div class="my-3">
+                            <p class="text-gray-600 dark:text-gray-500"> {{ page.settings.description }} </p>
+                            <div class="flex items-center my-3 space-x-2 text-xs font-light shrink-0">
+                              {% for tag in page.settings.tags %}
+                                <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-xs text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                  {{ tag.name }}
+                                </a>
+                              {% endfor %}
+                            </div>
+                          </div>
+                          <footer class="flex items-center space-x-3">
+                            <img class="rounded-full shrink-0" src="{{ page.author.avatar_url | default: avatar }}" width="32" height="32"
+                              alt="Author 01">
+                            <div class="text-sm font-medium text-gray-800 dark:text-gray-200"> {{ page.author.name }} </div>
+                          </footer>
+                        </article>
+                      {% else %}
+                        {{ 'generic.empty' | t }}
+                      {% endfor %}
+                    {% endpaginate_tag %}
+                  </div>
+
+                  {% if paginate.next_page %}
+                    <button
+                      id="load-more"
+                      data-action="click->load-more#loadMore"
+                      data-load-more-url-value="/?tag_name={{ params.tag_name | default: ' ' }}&_page={{ paginate.next_page }}"
+                      data-load-more-target="button"
+                      class="font-medium text-gray-700 ext-sm btn btn-ghost mt-18"
+                    >
+                    <svg data-load-more-target="loadingIcon" class="ml-2 w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                      <!-- 加载图标 -->
+                    </button>
+                  {% endif %}
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Index",
+"description": "Time Line",
+"thumb_url": "images/theme/index-time-line.png",
+"preview_image_urls": [
+"images/theme/index-list.png"
+],
+"sub_page_templates": ["page", "recent_updates_embed"],
+"settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "placeholder": "",
+        "label": "t:schema.templates.page.settings.title.label",
+        "info": "t:schema.templates.page.settings.title.info",
+        "default": "更新与公告"
+      },
+      {
+        "id": "description",
+        "type": "html",
+        "label": "t:schema.templates.page.settings.description.label",
+        "default": "汇总所有产品更新、功能发布、Bug修复与重要公告，<br class=\"hidden sm:inline\"/>帮助你了解我们在不断改进哪些关键内容"
+      }
+    ]
+}
+{% endschema%}

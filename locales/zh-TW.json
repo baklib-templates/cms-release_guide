@@ -1,0 +1,45 @@
+{
+  "snippets": {
+    "feedback_form": {
+      "title": "提交回饋",
+      "message_label": "留言",
+      "message_placeholder": "請輸入回饋內容",
+      "message_required": "回饋內容不能為空",
+      "submit": "提交",
+      "cancel": "取消"
+    },
+    "feedback_button": {
+      "title_posted": "感謝您的回饋",
+      "title_unposted": "提交回饋"
+    }
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "全部"
+      }
+    },
+    "page": {
+      "current_version": "當前版本",
+      "visit_count": "訪問量"
+    }
+  },
+  "generic": {
+    "feedback_created_at": "上次回饋於",
+    "empty": "暫無數據",
+    "all_tags": "所有標籤",
+    "recent_updates": "最新更新",
+    "back_to_home": "返回首頁",
+    "copyright": "版權所有",
+    "submit": "提交",
+    "placeholders": {
+      "search": "搜索",
+      "input_feedback": "請輸入反饋內容"
+    },
+    "buttons": {
+      "close": "關閉",
+      "signout": "退出登錄",
+      "signin": "登錄"
+    }
+  }
+}

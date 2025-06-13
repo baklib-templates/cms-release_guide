@@ -1,40 +1,45 @@
 {
-  "theme_label": "Release Guide",
-  "theme_description": "Small document content management, used to build what's news, guides, FAQs, Releases, Blog, etc.",
+  "snippets": {
+    "feedback_form": {
+      "title": "Submit Feedback",
+      "message_label": "Message",
+      "message_placeholder": "Please enter your feedback",
+      "message_required": "Feedback cannot be empty",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "feedback_button": {
+      "title_posted": "Thank you for your feedback",
+      "title_unposted": "Submit Feedback"
+    }
+  },
+  "templates": {
+    "index": {
+      "list": {
+        "all": "All"
+      }
+    },
+    "page": {
+      "current_version": "Current Version",
+      "visit_count": "Visits"
+    }
+  },
   "generic": {
-    "search": "👋 What Can We Help?",
-    "search_from": "All search results from: ",
-    "all": "All",
-    "popular": "Popular",
-    "home": "Home",
-    "back": "Back",
+    "feedback_created_at": "Last Feedback At",
+    "empty": "No Data",
+    "all_tags": "All Tags",
+    "recent_updates": "Recent Updates",
+    "back_to_home": "Back to Home",
+    "copyright": "Copyright",
     "submit": "Submit",
-    "empty": "Content is Empty",
-    "published_at": "Published at",
-    "404": "404 not found",
-    "403": "403 No access permission",
-    "copyright": "All rights reserved",
-    "current_version": "Current Version"
-  },
-  "placeholders": {
-    "search": "Searching...",
-    "input_feedback": "Send feedback",
-    "input_password": "Please input your password"
-  },
-  "buttons": {
-    "login": "Login",
-    "sso_login": "SSO Login",
-    "baklib_login": "Baklib Account Login"
-  },
-  "prompts": {
-    "page_restricted": "This page can only be accessed with authentication"
-  },
-  "settings_schema": {
-    "section_brand": "Brand Info",
-    "logo_url_label": "Logo",
-    "logo_url_info": "Recommend 150x60px size PNG/SVG",
-    "slogan_label": "Site Slogan",
-    "copyright_info_label": "Copyright info",
-    "copyright_info_placeholder": "Tanmer Inc.All right Served."
+    "placeholders": {
+      "search": "Search",
+      "input_feedback": "Please enter your feedback"
+    },
+    "buttons": {
+      "close": "Close",
+      "signout": "Sign Out",
+      "signin": "Sign In"
+    }
   }
 }

@@ -1,64 +1,89 @@
 {
-  "settings_schema": {
-    "generic": {
-      "name": "Basic Setting",
-      "settings": {
-        "slogan": {
-          "label": "Slogan"
-        },
-        "copyright_info": {
-          "label": "Copyright info",
-          "placeholder": "Tanmer Inc."
-        },
-        "is_allow_feedback":{
-          "label": "is allow feedback"
-        },
-        "is_allow_header":{
-          "label": "is allow header"
-        },
-        "is_allow_footer":{
-          "label": "is allow footer"
-        }
-      }
-    },
-    "nav": {
-      "nav_title": "Navigation Menu",
-      "head_title": "Embed HTML",
-      "settings": {
-        "header_menu_html": {
-          "label": "Header Navigation Menu",
-          "info": "Support HTML tags"
-        },
-        "footer_menu_html": {
-          "label": "Footer Nav Menu",
-          "info": "Support HTML tags"
-        },
-        "head_html": {
-          "label": "Embed HTML code in head section",
-          "info": "This content will be embedded in the site's <head> tag, please use standard HTML format",
-          "placeholder": "For example, reference external css/js files or add meta tags. <meta name='baidu_verification' content='CdOTMO2h2' />"
-        }
-      }
-    },
+  "theme_label": "Release Guide Template",
+  "theme_description": "Small CMS content management system for building product updates, announcements, news, blogs, logs, FAQs, etc.",
+  "templates": {
     "page": {
-      "name": "Page",
+      "name": "Article Page",
+      "description": "Article page template",
       "settings": {
         "title":{
-          "label": "Page Title",
-          "info": "Title show in content"
+          "label": "Title",
+          "info": "Article title displayed above the content"
         },
         "description":{
-          "label": "Description"
+          "label": "Summary"
         },
         "tags":{
           "label": "Tags"
         },
         "thumb_image_url":{
-          "label": "Thumb image URL"
+          "label": "Cover Image"
         },
         "content":{
           "label": "Page Content"
         }
+      }
+    }
+  },
+  "generic": {
+    "name": "General Settings",
+    "settings": {
+      "slogan": {
+        "label": "Slogan",
+        "default": "Welcome to Product Release Guide"
+      },
+      "company_name": {
+        "label": "Company Name",
+        "default": "Baklib.cn",
+        "info": "Displayed in the footer section"
+      },
+      "copyright_info": {
+        "label": "Copyright/ICP Information",
+        "placeholder": "ICP No.15035023"
+      },
+      "is_allow_feedback":{
+        "label": "Show User Feedback"
+      },
+      "is_show_visit_count":{
+        "label": "Show Visit Count"
+      },
+      "is_allow_header":{
+        "label": "Show Header Section"
+      },
+      "is_allow_footer":{
+        "label": "Show Footer Section"
+      },
+      "sort_rule": {
+        "label": "Home Page List Display Rules",
+        "options": {
+          "created_at_desc": "By Creation Date - Descending",
+          "created_at_asc": "By Creation Date - Ascending",
+          "edited_at_desc": "By Update Date - Descending",
+          "edited_at_asc": "By Update Date - Ascending",
+          "visit_count_desc": "By Visit Count (High to Low)",
+          "visit_count_asc": "By Visit Count (Low to High)",
+          "manual": "Manual Sort"
+        }
+      }
+    }
+  },
+  "custom_html": {
+    "name": "Custom HTML Code",
+    "settings": {
+      "head_html": {
+        "label": "Custom HTML in <head></head> tags",
+        "info": "Supports HTML tags and limited TailwindCSS style code",
+        "placeholder": "Usually used for analytics, customer service bot, etc."
+      },
+      "header_menu_html": {
+        "label": "Insert HTML in Top Navigation Area",
+        "info": "Supports HTML tags and limited TailwindCSS style code",
+        "placeholder": "Usually used for company website navigation links"
+      },
+      "footer_menu_html": {
+        "label": "Insert HTML in Footer Area",
+        "info": "Supports HTML tags and limited TailwindCSS style code",
+        "placeholder": "Usually used for external navigation links, friend links, SEO optimization links, etc."
       }
     }
   }
