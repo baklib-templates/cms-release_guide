@@ -21,8 +21,7 @@
           {% assign version_count = page.versions | size %}
           {% if version_count > 0 %}
             <ul class="flex space-x-1">
-              <li class="px-2 py-1 rounded-lg border hover:bg-teal-100"><a href="{{ page.path }}">{{'
-              templates.page.current_version' | t }}</a></li>
+          <li class="px-2 py-1 rounded-lg border hover:bg-teal-100"><a href="{{ page.path }}">{{'templates.page.current_version' | t }}</a></li>
               {% for version_page in page.versions %}
                 <li class="px-2 py-1 rounded-lg border hover:bg-teal-100"><a href="{{ version_page.path | append: '?version=' |  append: version_page.name }}">{{ version_page.name }}</a></li>
               {% endfor %}
@@ -37,15 +36,15 @@
           {% comment %} 是否显示访问量 {% endcomment %}
           {% if site.settings.is_show_visit_count %}
             <span class="flex justify-center items-center font-mono text-xs font-normal text-gray-400"> · {{ page.visits_count }} {{ '
-            templates.page.visit_count' | t: '访问量' }} </span>
+            templates.page.visit_count' | t: 'Visits' }} </span>
           {% endif %}
         </div>
-        <h2 class="my-5 text-lg font-bold leading-8 md:text-2xl text-slate-800">
-          {{ page.settings.title }}
+        <h2 class="my-5 text-2xl font-bold leading-10 md:text-4xl text-slate-800">
+          {{ page_title }}
         </h2>
-        {% if page.settings.thumb_image_url %}
+        {% if page_thumb_image_url %}
           <div class="overflow-hidden rounded-lg bg-primary/8 md:max-h-[40vh] mb-2">
-            <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+            <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page_thumb_image_url }}" />
           </div>
         {% endif %}
         {% if page_description %}
@@ -73,7 +72,7 @@
         </ul>
       {% endif %}
 
-       <section class="my-8">
+      <section class="my-8">
         {% render 'feedback_button', page: page %}
       </section>
     </div>
@@ -83,7 +82,7 @@
       {% render 'sidebar', site: site %}
     </aside>
   </div>
- 
+
 </div>
 
 

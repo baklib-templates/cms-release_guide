@@ -66,7 +66,7 @@
                 </div>
 
                 <h1
-                  class="pb-4 text-5xl font-bold text-gray-800 font-inter-tight md:text-6xl dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200">
+                  class="pb-4 text-3xl font-bold md:text-4xl text-gray-800 font-inter-tight  dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200">
                   {{ page.settings.title }}</h1>
                 <p class="text-lg text-gray-700 dark:text-gray-400">
                   {{ page.settings.description  }}
@@ -88,8 +88,7 @@
 
                 <!-- Sidebar -->
                 <aside class="mb-12 md:mb-0 md:w-[276px] md:mr-8 md:shrink-0 ">
-                  <div class="mb-3 text-xs font-semibold tracking-normal uppercase text-gray-500/80"> 选择标签
-                  </div>
+                  <div class="mb-3 font-semibold tracking-normal uppercase text-gray-500/80"> TAGS </div>
                   <ul class="space-y-0.5" x-data="{ }">
                     <li>
                       <a class="flex items-center px-4 space-x-4 h-9 text-sm font-medium text-gray-800 transition-colors dark:text-gray-200"
@@ -131,24 +130,23 @@
                             class="flex flex-col sm:flex-row items-start mb-2 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-[calc(100%+1rem)] before:pl-px before:bg-indigo-300/50 dark:before:bg-indigo-300/15 sm:before:ml-[4.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-400 after:rounded-full sm:after:ml-[4.5rem] after:-translate-x-1/2 after:translate-y-2">
                             <time
                               class="inline-flex left-0 justify-center items-center mb-3 w-14 h-6 text-xs font-medium text-white bg-indigo-400 rounded-lg sm:absolute sm:mb-0">  {{ page.published_at | date: "%m-%d"  }}</time>
-                            <h2 class="text-lg font-semibold leading-6 text-gray-800 font-inter-tight dark:text-gray-200">
+                            <h2 class="text-lg md:text-2xl font-semibold leading-6 text-gray-800 font-inter-tight dark:text-gray-200">
                               <a href="{{ page.path }}">{{ page.link_text }}</a>
                             </h2>
                           </header>
                           <!-- Content -->
                           <div class="my-3">
-                            <p class="text-gray-600 dark:text-gray-500"> {{ page.settings.description }} </p>
-                            <div class="flex items-center my-3 space-x-2 text-xs font-light shrink-0">
-                              {% for tag in page.settings.tags %}
-                                <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-xs text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2">
-                                  {{ tag.name }}
-                                </a>
-                              {% endfor %}
-                            </div>
+                            <p class="text-gray-500 dark:text-gray-300"> {{ page.settings.description }} </p>
                           </div>
+                          {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
+                            <div class="overflow-hidden rounded-lg bg-primary/10">
+                              <a href="{{ page.path }}" class="block">
+                                <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+                              </a>
+                            </div>
+                          {%- endif  -%}
                           <footer class="flex items-center space-x-3">
-                            <img class="rounded-full shrink-0" src="{{ page.author.avatar_url | default: avatar }}" width="32" height="32"
-                              alt="Author 01">
+                            <img class="rounded-full shrink-0" src="{{ page.author.avatar_url | default: avatar }}" width="32" height="32" alt="Author 01">
                             <div class="text-sm font-medium text-gray-800 dark:text-gray-200"> {{ page.author.name }} </div>
                           </footer>
                         </article>

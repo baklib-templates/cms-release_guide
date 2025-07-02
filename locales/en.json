@@ -20,9 +20,16 @@
       }
     },
     "page": {
-      "current_version": "Current Version",
+      "current_version": "Current",
       "visit_count": "Visits"
     }
+  },
+  "paginate": {
+    "showing": "currently showing",
+    "total": "total",
+    "records": "records",
+    "previous": "Previous Page",
+    "next": "Next Page"
   },
   "generic": {
     "feedback_created_at": "Last Feedback At",

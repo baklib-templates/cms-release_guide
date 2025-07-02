@@ -13,7 +13,7 @@
         {% render 'tag', tag: tag %}
       {% endfor %}
     </div>
-    <a class='text-md font-bold md:text-2xl text-slate-800 hover:underline' href="{{ page.path }}">{{ page.settings.title }}</a>
+    <a class='text-md font-bold md:text-2xl text-slate-800 hover:underline' href="{{ page.path }}">{{ page.link_text }}</a>
 
     {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
       <div class="overflow-hidden rounded-lg bg-primary/10">
