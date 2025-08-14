@@ -1,7 +1,7 @@
-  <div class="overflow-visible w-full max-w-5xl mx-auto p-2 sm:px-0 flex md:space-x-2 h-full">
+  <div class="overflow-visible w-full max-w-6xl mx-auto px-2 flex md:space-x-2 h-full">
     <div class="flex-1 flex flex-col h-full space-y-4 min-h-[calc(100vh-200px)]">
       <!-- tag name -->
-      <div class="rounded-lg shadow" style="--bg-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 95%); --color: {{ tag.color }}">
+      <div class="rounded-lg shadow shadow-primary/10 my-6" style="--bg-color: hsl({{ tag.color_hls[0] }}, {{ tag.color_hls[1] }}%, 95%); --color: {{ tag.color }}">
         <div class="h-5 rounded-t-lg bg-[var(--color)]"></div>
         <div class="px-3 py-6 text-xl rounded-b-lg bg-[var(--bg-color)]">
           <span class="flex-grow w-0 break-words font-semibold text-[--color]"> # {{ tag.name }}</span>
@@ -9,20 +9,22 @@
       </div>
 
       <!-- filters by tag name -->
-      <ul role="list" class="space-y-2">
+      <ul role="list" class="space-y-6">
         {% paginate_tag tag.pages, as: 'pages' %}
           {% for page in pages %}
             {% render 'card', page: page %}
           {% else %}
             <div class="rounded-lg bg-white py-24 text-sm flex justify-center">{{ 'generic.empty' | t }}</div>
           {% endfor %}
-          {% render 'paginate', paginate: paginate %}
+          <div class="flex justify-center mb-4">
+            {% render 'paginate', paginate: paginate %}
+          </div>
         {% endpaginate_tag %}
       </ul>
     </div>
 
     <!-- Sidebar Section -->
-    <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[74px] h-fit">
+    <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[88px] h-fit">
       {% render 'sidebar', site: site %}
     </aside>
   </div>

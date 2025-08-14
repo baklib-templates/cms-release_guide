@@ -54,4 +54,4 @@
   </div>
 </header>
 {% comment %} 补充 fixed header 内容高度 {% endcomment %}
-<div class='h-[60px] md:h-[64px]' x-data="{headerHeight: 0}" x-init="$nextTick(() => { headerHeight = document.querySelector('header').offsetHeight; $el.style.height = headerHeight + 'px' })"></div>
+<div class='h-[60px]' x-data="{headerHeight: 0}" x-init="$nextTick(() => { headerHeight = document.querySelector('header').offsetHeight; $el.style.height = headerHeight + 'px' })"></div>

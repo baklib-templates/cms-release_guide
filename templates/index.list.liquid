@@ -1,7 +1,19 @@
+{% schema %}
+  {
+    "name": "列表方式",
+    "description": "以普通列表的方式展示数据",
+    "thumb_url": "images/theme/index-list.png",
+    "preview_image_urls": [
+      "images/theme/index-list.png"
+    ],
+    "sub_page_templates": ["page"]
+  }
+{% endschema%}
+
 <!-- from cruip mosaic theme -->
 {% assign pages = site.pages['/'].children_in_list | order_by: '-created_at' %}
 <div class='bg-white flex-1'>
-  <div class="overflow-visible w-full max-w-5xl mx-auto h-full p-2 sm:px-0">
+  <div class="overflow-visible w-full max-w-4xl mx-auto h-full p-2 sm:px-0">
     <!-- Search form -->
     <div class='my-8 md:mb-4'>
       {% form_tag 'search' %}
@@ -61,15 +73,3 @@
     </div>
   </div>
 </div>
-
-{% schema %}
-  {
-    "name": "Index",
-    "description": "List Style",
-    "thumb_url": "images/theme/index-list.png",
-    "preview_image_urls": [
-      "images/theme/index-list.png"
-    ],
-    "sub_page_templates": ["page"]
-  }
-{% endschema%}

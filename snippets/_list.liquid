@@ -11,18 +11,15 @@
       <h2 class="text-lg font-bold leading-snug md:text-xl text-slate-800 hover:underline hover:text-indigo-600">{{
         page.link_text }}</h2>
     </a>
-    <div class="pl-7">
-      {% if page.settings.description %}
-      <div class="text-slate-500">{{ page.settings.description }}</div>
-      {% endif %}
-      <ul class="flex flex-wrap">
-        {% for tag in page.tags %}
-        <li
-          class="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-          <a class="text-sm font-bold text-primary hover:text-primary" href="{{ tag.path }}">{{ tag.name }}</a>
-        </li>
+    <div class="pl-7 pt-1 pb-4 space-y-4">
+      <div class="flex gap-2">
+        {% for tag in page.settings.tags %}
+          {% render "tag", tag: tag %}
         {% endfor %}
-      </ul>
+      </div>
+      {% if page.settings.description %}
+        <div class="text-slate-500">{{ page.settings.description }}</div>
+      {% endif %}
       <!-- sub page list -->
       {% render "sub_page_list", page: page, per: 5 %}
     </div>

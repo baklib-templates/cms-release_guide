@@ -4,3 +4,6 @@ window.Stimulus = application
 
 import scroll_animation_controller from "./scroll_animation_controller";
 application.register('scroll-animation', scroll_animation_controller)
+
+import TimelineMonthController from "./timeline_month_controller"
+application.register("timeline-month", TimelineMonthController)
