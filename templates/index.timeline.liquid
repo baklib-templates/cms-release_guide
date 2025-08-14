@@ -1,21 +1,40 @@
+{% schema %}
+{
+  "name": "时间线",
+  "description": "以时间线的方式展示数据",
+  "thumb_url": "images/theme/index-time-line.png",
+  "preview_image_urls": [
+  "images/theme/index-list.png"
+  ],
+  "sub_page_templates": ["page"],
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "placeholder": "",
+      "label": "t:schema.templates.page.settings.title.label",
+      "info": "t:schema.templates.page.settings.title.info",
+      "default": "更新与公告"
+    },
+    {
+      "id": "description",
+      "type": "html",
+      "label": "t:schema.templates.page.settings.description.label",
+      "default": "汇总所有产品更新、功能发布、Bug修复与重要公告，<br class=\"hidden sm:inline\"/>帮助你了解我们在不断改进哪些关键内容"
+    }
+  ]
+}
+{% endschema%}
+
 <!-- from cruip mosaic theme -->
 {% assign pages = site.pages['/'].children_in_list | order_by: '-published_at' %}
 {% assign avatar = 'images/avatar.png' | asset_url %}
 
 <style>
-  html {
-    background: none;
-  }
-  footer {
-    color: #374151;
-  }
-  body {
-    background: none;
-  }
-  body > main {
-    background: none;
-  }
+  html, body, body > main { background: none; }
+  footer { color: white; background-color: hsl(var(--theme-color-primary)); }
 </style>
+
 <div class="antialiased tracking-tight text-gray-800 font-inter dark:bg-gray-900 dark:text-gray-200" >
   <!-- Page wrapper -->
   <div class="relative flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
@@ -68,7 +87,7 @@
                 <h1
                   class="pb-4 text-3xl font-bold md:text-4xl text-gray-800 font-inter-tight  dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-indigo-200 dark:to-gray-200">
                   {{ page.settings.title }}</h1>
-                <p class="text-lg text-gray-700 dark:text-gray-400">
+                <p class="text-base md:text-lg text-gray-700 dark:text-gray-400">
                   {{ page.settings.description  }}
                 </p>
 
@@ -87,8 +106,8 @@
               <div class="md:flex md:justify-between" data-controller="load-more" >
 
                 <!-- Sidebar -->
-                <aside class="mb-12 md:mb-0 md:w-[276px] md:mr-8 md:shrink-0 ">
-                  <div class="mb-3 font-semibold tracking-normal uppercase text-gray-500/80"> TAGS </div>
+                <aside class="hidden md:block mb-12 md:mb-0 md:w-[276px] md:mr-8 md:shrink-0">
+                  <div class="mb-3 pl-10 text-sm font-mono font-semibold tracking-normal uppercase text-gray-500/80"> TAGS </div>
                   <ul class="space-y-0.5" x-data="{ }">
                     <li>
                       <a class="flex items-center px-4 space-x-4 h-9 text-sm font-medium text-gray-800 transition-colors dark:text-gray-200"
@@ -120,20 +139,37 @@
                 {% endif %}
 
                 <div class="md:grow">
-                  <div id="pages_container" data-load-more-target="container" class="-my-5 space-y-4">
+                  <div
+                    id="pages_container"
+                    class="-my-5 space-y-4"
+                    data-controller="timeline-month"
+                    data-timeline-month-shown-class="inline-flex"
+                    data-timeline-month-hidden-class="hidden2"
+                    data-load-more-target="container"
+                  >
                     {% paginate_tag pages, per: 12 %}
                       {% for page in pages %}
                         <article
-                          class="relative py-5 pr-4 pl-12 sm:pl-28 group before:absolute before:left-8 sm:before:left-24 before:right-0 before:inset-y-0 before:bg-gradient-to-tr before:from-white/70 before:to-white/50 before:dark:bg-gradient-to-b before:dark:from-gray-700/50 before:dark:to-gray-700/40 before:rounded-lg before:shadow before:shadow-black/5 before:-z-10 even:before:opacity-50">
+                          class="relative py-5 pr-4 pl-12 sm:pl-28 group before:absolute before:left-8 sm:before:left-24 before:right-0 before:inset-y-0 before:bg-gradient-to-tr before:from-white/70 before:to-white/50 before:dark:bg-gradient-to-b before:dark:from-gray-700/50 before:dark:to-gray-700/40 before:rounded-lg before:hover:shadow before:hover:shadow-black/5 before:-z-10 even:before:opacity-50"
+                          data-timeline-date="{{ page.published_at }}"
+                        >
                           <!-- Vertical line (::before) ~ Date ~ Title ~ Circle marker (::after) -->
                           <header
-                            class="flex flex-col sm:flex-row items-start mb-2 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-[calc(100%+1rem)] before:pl-px before:bg-indigo-300/50 dark:before:bg-indigo-300/15 sm:before:ml-[4.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-400 after:rounded-full sm:after:ml-[4.5rem] after:-translate-x-1/2 after:translate-y-2">
+                            class="flex flex-col sm:flex-row items-start mb-2 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-[calc(100%+1rem)] before:pl-px before:bg-primary/20 dark:before:bg-primary/20 sm:before:ml-[4.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-primary/70 after:rounded-full sm:after:ml-[4.5rem] after:-translate-x-1/2 after:translate-y-2">
                             <time
-                              class="inline-flex left-0 justify-center items-center mb-3 w-14 h-6 text-xs font-medium text-white bg-indigo-400 rounded-lg sm:absolute sm:mb-0">  {{ page.published_at | date: "%m-%d"  }}</time>
-                            <h2 class="text-lg md:text-2xl font-semibold leading-6 text-gray-800 font-inter-tight dark:text-gray-200">
+                              class="hidden left-0 justify-center items-center mb-3 w-14 h-6 text-xs font-medium text-primary bg-primary/20 rounded-lg sm:absolute sm:mb-0"
+                              data-timeline-month-target="time"
+                              data-timeline-month-value="{{ page.published_at }}"
+                            ></time>
+                            <h2 class="text-lg md:text-2xl font-semibold leading-6 text-gray-800 font-inter-tight dark:text-gray-200 line-clamp-1">
                               <a href="{{ page.path }}">{{ page.link_text }}</a>
                             </h2>
                           </header>
+                          <div class="flex gap-1">
+                            {% for tag in page.settings.tags %}
+                              {% render "tag", tag: tag %}
+                            {% endfor %}
+                          </div>
                           <!-- Content -->
                           <div class="my-3">
                             <p class="text-gray-500 dark:text-gray-300"> {{ page.settings.description }} </p>
@@ -145,10 +181,6 @@
                               </a>
                             </div>
                           {%- endif  -%}
-                          <footer class="flex items-center space-x-3">
-                            <img class="rounded-full shrink-0" src="{{ page.author.avatar_url | default: avatar }}" width="32" height="32" alt="Author 01">
-                            <div class="text-sm font-medium text-gray-800 dark:text-gray-200"> {{ page.author.name }} </div>
-                          </footer>
                         </article>
                       {% else %}
                         {{ 'generic.empty' | t }}
@@ -182,30 +214,3 @@
     </main>
   </div>
 </div>
-{% schema %}
-{
-"name": "Index",
-"description": "Time Line",
-"thumb_url": "images/theme/index-time-line.png",
-"preview_image_urls": [
-"images/theme/index-list.png"
-],
-"sub_page_templates": ["page", "recent_updates_embed"],
-"settings": [
-      {
-        "id": "title",
-        "type": "text",
-        "placeholder": "",
-        "label": "t:schema.templates.page.settings.title.label",
-        "info": "t:schema.templates.page.settings.title.info",
-        "default": "更新与公告"
-      },
-      {
-        "id": "description",
-        "type": "html",
-        "label": "t:schema.templates.page.settings.description.label",
-        "default": "汇总所有产品更新、功能发布、Bug修复与重要公告，<br class=\"hidden sm:inline\"/>帮助你了解我们在不断改进哪些关键内容"
-      }
-    ]
-}
-{% endschema%}

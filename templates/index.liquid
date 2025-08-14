@@ -1,9 +1,21 @@
+{% schema %}
+  {
+    "name": "卡片方式",
+    "description": "以卡片的方式展示数据",
+    "thumb_url": "images/theme/index-card.png",
+    "preview_image_urls": [
+      "images/theme/index-card.png"
+    ],
+    "sub_page_templates": ["page"]
+  }
+{% endschema %}
+
 {% assign sort_rule = site.settings.sort_rule.value %}
 {% assign pages = site.pages['/'].children_in_list | order_by: sort_rule %}
 
 <div id="screen" class="bg-primary bg-gradient-to-r from-white/20 md:to-black/20 h-[180px] absolute -top-[24px] left-0 w-full z-0"></div>
 
-<div class="overflow-visible w-full max-w-5xl mx-auto h-full p-2 sm:px-0 flex flex-col sm:flex-row sm:space-x-2">
+<div class="overflow-visible w-full max-w-6xl mt-0 md:mt-8 mx-auto h-full p-2 flex flex-col sm:flex-row z-1">
   <div class="w-full space-y-2 lg:space-y-4">
     {% paginate_tag pages, per: 6 %}
       {% for page in pages %}
@@ -19,19 +31,7 @@
   </div>
 
   <!-- Sidebar Section -->
-  <aside class="hidden w-64 pl-4 sm:block shrink-0 sticky top-[74px] h-fit">
+  <aside class="hidden w-64 pl-4 md:block shrink-0 sticky top-[74px] h-fit">
     {% render 'sidebar', site: site %}
   </aside>
 </div>
-
-{% schema %}
-  {
-    "name": "Index",
-    "description": "Card Style",
-    "thumb_url": "images/theme/index-card.png",
-    "preview_image_urls": [
-      "images/theme/index-card.png"
-    ],
-    "sub_page_templates": ["page"]
-  }
-{% endschema %}
