@@ -4,7 +4,7 @@
     "theme_name": "guide",
     "theme_label": "t:schema.theme_label",
     "theme_description": "t:schema.theme_description",
-    "theme_version": "2.0.1",
+    "theme_version": "2.0.2",
     "theme_syntax_version": "v2",
     "theme_scope": "cms",
     "theme_author": "Baklib",
@@ -40,45 +40,55 @@
     ],
     "recommendations": {
       "color_schemas": {
-        "fashion": {
-          "name": "时尚",
+        "scheme1": {
+          "name": "配色方案1",
           "colors": {
-            "--theme-color-primary": "#3D50E0",
-            "--theme-color-secondary": "#E91E63",
-            "--theme-color-accent": "#AAAAAA",
-            "--theme-color-info": "#2196F3",
-            "--theme-color-success": "#4CAF50",
-            "--theme-color-warning": "#FFC107"
+            "--theme-color-base-100": "#f8f9ff",
+            "--theme-color-base-200": "#f5f7ff",
+            "--theme-color-base-300": "#e6eaf7",
+            "--theme-color-base-content": "#181a1f",
+            "--theme-color-primary": "#e0005b",
+            "--theme-color-primary-content": "#3a1a1c",
+            "--theme-color-secondary": "#e6f7e6",
+            "--theme-color-secondary-content": "#2a1a1c",
+            "--theme-color-accent": "#5fd3b3",
+            "--theme-color-accent-content": "#1a2a1c",
+            "--theme-color-neutral": "#5a5a5a",
+            "--theme-color-neutral-content": "#f8f9ff",
+            "--theme-color-info": "#3a8fff",
+            "--theme-color-info-content": "#f5f7ff",
+            "--theme-color-success": "#4caf50",
+            "--theme-color-success-content": "#f5f7ff",
+            "--theme-color-warning": "#ffc107",
+            "--theme-color-warning-content": "#f5f7ff",
+            "--theme-color-error": "#ff5252",
+            "--theme-color-error-content": "#f5f7ff"
           }
         },
-        "old_school": {
-          "name": "复古",
+        "scheme2": {
+          "name": "配色方案2",
           "colors": {
-            "--theme-color-primary": "#9C27B0",
-            "--theme-color-secondary": "#673AB7",
-            "--theme-color-accent": "#AAAAAA",
-            "--theme-color-info": "#418CC8",
-            "--theme-color-success": "#29B52F",
-            "--theme-color-warning": "#FFC107"
+            "--theme-color-base-100": "#181a2a",
+            "--theme-color-base-200": "#23234a",
+            "--theme-color-base-300": "#2e2e6a",
+            "--theme-color-base-content": "#f5f6fa",
+            "--theme-color-primary": "#4ad7c8",
+            "--theme-color-primary-content": "#2e3a3f",
+            "--theme-color-secondary": "#000000",
+            "--theme-color-secondary-content": "#ffffff",
+            "--theme-color-accent": "#5fd3b3",
+            "--theme-color-accent-content": "#1a2a1c",
+            "--theme-color-neutral": "#3d3d5a",
+            "--theme-color-neutral-content": "#fafbff",
+            "--theme-color-info": "#3a8fff",
+            "--theme-color-info-content": "#f5f7ff",
+            "--theme-color-success": "#4fdc7b",
+            "--theme-color-success-content": "#f6fff9",
+            "--theme-color-warning": "#ffd966",
+            "--theme-color-warning-content": "#fffbe6",
+            "--theme-color-error": "#ff5252",
+            "--theme-color-error-content": "#f5f7ff"
           }
-        }
-      },
-      "initial_pages": {
-        "default": {
-          "name": "产品指南",
-          "default": true,
-          "pages": [
-            {
-              "name": "开始使用",
-              "slug": "get-start",
-              "template": "page"
-            },
-            {
-              "name": "操作教程",
-              "slug": "guide",
-              "template": "page"
-            }
-          ]
         }
       }
     }
