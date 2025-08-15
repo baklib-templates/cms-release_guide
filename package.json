@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npm-run-all --parallel build:css build:js",
-    "build:css": "npx @tailwindcss/cli -i ./src/stylesheets/application.css -o ./assets/stylesheets/application.css",
+    "build:css": "npx @tailwindcss/cli -i ./src/stylesheets/application.css -o ./assets/stylesheets/application.css --minify",
     "build:js": "npx esbuild ./src/javascripts/application.js --bundle --minify --outfile=./assets/javascripts/application.js",
     "dev": "npm-run-all --parallel 'build:css --watch' 'build:js --watch'",
     "livereload": "guard"
