@@ -17,11 +17,21 @@ function string2month(string, options = {}) {
       format = 'long' // 'long', 'short', 'narrow'
     } = options;
 
-    const formatter = new Intl.DateTimeFormat(locale, {
-      month: format
-    });
+    const currentYear = new Date().getFullYear();
+    const dateYear = date.getFullYear();
 
-    return formatter.format(date);
+    // 如果是今年，只显示月份
+    if (dateYear === currentYear) {
+      const formatter = new Intl.DateTimeFormat(locale, {
+        month: format
+      });
+      return formatter.format(date);
+    } else {
+      // 如果不是今年，显示 YYYY-MM 格式
+      const year = dateYear;
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      return `${year}-${month}`;
+    }
   } catch (error) {
     return null;
   }
