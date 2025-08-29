@@ -6,20 +6,20 @@
       "name": "Article Page",
       "description": "Article page template",
       "settings": {
-        "title":{
+        "title": {
           "label": "Title",
           "info": "Article title displayed above the content"
         },
-        "description":{
+        "description": {
           "label": "Summary"
         },
-        "tags":{
+        "tags": {
           "label": "Tags"
         },
-        "thumb_image_url":{
+        "thumb_image_url": {
           "label": "Cover Image"
         },
-        "content":{
+        "content": {
           "label": "Page Content"
         }
       }
@@ -41,16 +41,16 @@
         "label": "Copyright/ICP Information",
         "placeholder": "ICP No.15035023"
       },
-      "is_allow_feedback":{
+      "is_allow_feedback": {
         "label": "Show User Feedback"
       },
-      "is_show_visit_count":{
+      "is_show_visit_count": {
         "label": "Show Visit Count"
       },
-      "is_allow_header":{
+      "is_allow_header": {
         "label": "Show Header Section"
       },
-      "is_allow_footer":{
+      "is_allow_footer": {
         "label": "Show Footer Section"
       },
       "sort_rule": {
@@ -84,6 +84,27 @@
         "label": "Insert HTML in Footer Area",
         "info": "Supports HTML tags and limited TailwindCSS style code",
         "placeholder": "Usually used for external navigation links, friend links, SEO optimization links, etc."
+      }
+    }
+  },
+  "settings": {
+    "weixin_share": {
+      "title": "WeChat configuration",
+      "weixin_app_id": {
+        "label": "Developer ID (AppID)",
+        "info": "<a href='https://mp.weixin.qq.com/cgi-bin/frame'>WeChat official account/setting and development/development interface management</a>"
+      },
+      "weixin_app_secret": {
+        "label": "Developer Password (AppSecret)",
+        "info": ""
+      },
+      "weixin_enabled": {
+        "label": "Do you want to enable WeChat sharing",
+        "info": "Provide the ability to share site pages on WeChat</br>1. Please configure the IP whitelist (ip: ${service_ip}) in the WeChat official account. After configuration, there will be a period of delay in effectiveness. </br>2. Check whether WeChat sharing permission is enabled, WeChat official account/setting and development/development interface management:<a href='https://mp.weixin.qq.com/cgi-bin/frame> Web service/sharing interface</a>.</br>3. Whether the sharing link is a card: enter the sharing card form from the card form, and enter the sharing link form from the link form; The initial link sharing on the webpage can be done through the company's service account or by bookmarking and sharing cards (this rule is a WeChat sharing restriction)."
+      },
+      "weixin_debug": {
+        "label": "Do you want to enable debug prompt",
+        "info": "Please only enable this option during the configuration phase; If WeChat sharing is not configured correctly when accessing the front-end site after activation, an error message will be automatically prompted"
       }
     }
   }

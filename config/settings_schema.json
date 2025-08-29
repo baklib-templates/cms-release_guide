@@ -174,5 +174,36 @@
         "placeholder": "t:schema.custom_html.settings.footer_menu_html.placeholder"
       }
     ]
+  },
+  {
+    "name": "t:schema.settings.weixin_share.title",
+    "settings": [
+      {
+        "id": "weixin_app_id",
+        "type": "text",
+        "label": "t:schema.settings.weixin_share.weixin_app_id.label",
+        "info": "t:schema.settings.weixin_share.weixin_app_id.info"
+      },
+      {
+        "id": "weixin_app_secret",
+        "type": "text",
+        "label": "t:schema.settings.weixin_share.weixin_app_secret.label",
+        "info": "t:schema.settings.weixin_share.weixin_app_secret.info"
+      },
+      {
+        "id": "weixin_enabled",
+        "type": "checkbox",
+        "label": "t:schema.settings.weixin_share.weixin_enabled.label",
+        "default": false,
+        "info": "t:schema.settings.weixin_share.weixin_enabled.info"
+      },
+      {
+        "id": "weixin_debug",
+        "type": "checkbox",
+        "label": "t:schema.settings.weixin_share.weixin_debug.label",
+        "default": false,
+        "info": "t:schema.settings.weixin_share.weixin_debug.info"
+      }
+    ]
   }
 ]

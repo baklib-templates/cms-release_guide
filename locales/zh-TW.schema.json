@@ -6,20 +6,20 @@
       "name": "文章頁面",
       "description": "文章頁面模板",
       "settings": {
-        "title":{
+        "title": {
           "label": "標題",
           "info": "顯示在正文上方的文章標題"
         },
-        "description":{
+        "description": {
           "label": "摘要"
         },
-        "tags":{
+        "tags": {
           "label": "標籤"
         },
-        "thumb_image_url":{
+        "thumb_image_url": {
           "label": "封面圖"
         },
-        "content":{
+        "content": {
           "label": "頁面內容"
         }
       }
@@ -41,16 +41,16 @@
         "label": "備案/版權信息",
         "placeholder": "蜀ICP備15035023號"
       },
-      "is_allow_feedback":{
+      "is_allow_feedback": {
         "label": "是否展示用戶反饋"
       },
-      "is_show_visit_count":{
+      "is_show_visit_count": {
         "label": "是否展示訪問量"
       },
-      "is_allow_header":{
+      "is_allow_header": {
         "label": "是否展示頁頭Header部分"
       },
-      "is_allow_footer":{
+      "is_allow_footer": {
         "label": "是否展示頁腳Footer部分"
       },
       "sort_rule": {
@@ -84,6 +84,27 @@
         "label": "底部區域插入 HTML 代碼",
         "info": "支持HTML標籤和有限的TailwindCSS樣式代碼",
         "placeholder": "通常在這裡插入公司其他網站的外部導航鏈接、友情鏈接、SEO 優化鏈接等"
+      }
+    }
+  },
+  "settings": {
+    "weixin_share": {
+      "title": "微信配寘",
+      "weixin_app_id": {
+        "label": "開發者ID（AppID）",
+        "info": "<a href='https://mp.weixin.qq.com/cgi-bin/frame'>微信公眾號/設定與開發/開發介面管理</a>中獲取"
+      },
+      "weixin_app_secret": {
+        "label": "開發者密碼（AppSecret）",
+        "info": ""
+      },
+      "weixin_enabled": {
+        "label": "是否啟用微信分享",
+        "info": "提供網站頁面微信分享的能力</br>1.請在微信公眾號中配寘ip白名單（ip: ${service_ip}），配寘後將有一段時間的生效延遲。 </br>2.檢查是否開啟微信分享許可權，微信公眾號/設定與開發/開發介面管理：<a href='https://mp.weixin.qq.com/cgi-bin/frame'>網頁服務/分享介面</a>。</br>3.分享連結是否為卡片：從卡片形式進入分享卡片形式，連結形式進入分享連結形式； 網頁初始連結分享可由公司的服務號中或收藏後進行卡片分享（此規則為微信分享限制）。"
+      },
+      "weixin_debug": {
+        "label": "是否開啟debug提示",
+        "info": "請僅在配寘階段開啟此選項； 開啟後在訪問前端網站時若未正確配寘微信分享將自動提示錯誤資訊"
       }
     }
   }

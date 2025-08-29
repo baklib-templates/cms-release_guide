@@ -1,2 +1,5 @@
 node_modules/
 yarn-error.log
+.DS_Store
+.baklib_theme_i18nrc.json
+baidu-translate-cache.json

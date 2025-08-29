@@ -41,5 +41,12 @@
       "signout": "로그아웃",
       "signin": "로그인"
     }
+  },
+  "paginate": {
+    "showing": "현재 표시 단계",
+    "total": "합계",
+    "records": "막대 레코드",
+    "previous": "이전 페이지",
+    "next": "다음 페이지"
   }
 }

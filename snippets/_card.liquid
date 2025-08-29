@@ -15,10 +15,11 @@
     </div>
     <a class='text-md font-bold md:text-2xl text-slate-800 hover:underline' href="{{ page.path }}">{{ page.link_text }}</a>
 
-    {%- if page.settings.thumb_image_url and page.settings.thumb_image_url.size > 0 -%}
+    {% assign thumb_image_url = page.settings.thumb_image_url | presence %}
+    {%- if thumb_image_url -%}
       <div class="overflow-hidden rounded-lg bg-primary/10">
         <a href="{{ page.path }}" class="block">
-          <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+          <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ thumb_image_url }}" />
         </a>
       </div>
     {%- endif  -%}

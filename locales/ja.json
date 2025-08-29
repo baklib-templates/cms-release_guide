@@ -41,5 +41,12 @@
       "signout": "ログアウト",
       "signin": "ログイン"
     }
+  },
+  "paginate": {
+    "showing": "現在表示されている",
+    "total": "合計",
+    "records": "バーレコード",
+    "previous": "前のページ",
+    "next": "次のページ"
   }
 }

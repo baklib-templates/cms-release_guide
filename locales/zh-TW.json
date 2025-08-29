@@ -41,5 +41,12 @@
       "signout": "退出登錄",
       "signin": "登錄"
     }
+  },
+  "paginate": {
+    "showing": "當前顯示第",
+    "total": "總共",
+    "records": "條記錄",
+    "previous": "上一頁",
+    "next": "下一頁"
   }
 }

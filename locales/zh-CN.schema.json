@@ -6,20 +6,20 @@
       "name": "文章页面",
       "description": "文章页面模板",
       "settings": {
-        "title":{
+        "title": {
           "label": "标题",
           "info": "显示在正文上方的文章标题"
         },
-        "description":{
+        "description": {
           "label": "摘要"
         },
-        "tags":{
+        "tags": {
           "label": "标签"
         },
-        "thumb_image_url":{
+        "thumb_image_url": {
           "label": "封面图"
         },
-        "content":{
+        "content": {
           "label": "页面内容"
         }
       }
@@ -41,16 +41,16 @@
         "label": "备案/版权信息",
         "placeholder": "蜀ICP备15035023号"
       },
-      "is_allow_feedback":{
+      "is_allow_feedback": {
         "label": "是否展示用户反馈"
       },
-      "is_show_visit_count":{
+      "is_show_visit_count": {
         "label": "是否展示访问量"
       },
-      "is_allow_header":{
+      "is_allow_header": {
         "label": "是否展示页头Header部分"
       },
-      "is_allow_footer":{
+      "is_allow_footer": {
         "label": "是否展示页脚Footer部分"
       },
       "sort_rule": {
@@ -84,6 +84,27 @@
         "label": "底部区域插入 HTML 代码",
         "info": "支持HTML标签和有限的TailwindCSS样式代码",
         "placeholder": "通常在这里插入公司其他网站的外部导航链接、友情链接、SEO 优化链接等"
+      }
+    }
+  },
+  "settings": {
+    "weixin_share": {
+      "title": "微信配置",
+      "weixin_app_id": {
+        "label": "开发者ID(AppID)",
+        "info": "<a href='https://mp.weixin.qq.com/cgi-bin/frame'>微信公众号/设置与开发/开发接口管理</a>中获取 "
+      },
+      "weixin_app_secret": {
+        "label": "开发者密码(AppSecret)",
+        "info": ""
+      },
+      "weixin_enabled": {
+        "label": "是否启用微信分享",
+        "info": "提供站点页面微信分享的能力</br>1. 请在微信公众号中配置ip白名单（ip: ${service_ip}）, 配置后将有一段时间的生效延迟。</br>2. 检查是否开启微信分享权限，微信公众号/设置与开发/开发接口管理: <a href='https://mp.weixin.qq.com/cgi-bin/frame'>网页服务/分享接口</a>。</br>3. 分享链接是否为卡片：从卡片形式进入分享卡片形式，链接形式进入分享链接形式；网页初始链接分享可由公司的服务号中或收藏后进行卡片分享（此规则为微信分享限制）。"
+      },
+      "weixin_debug": {
+        "label": "是否开启debug提示",
+        "info": "请仅在配置阶段开启此选项；开启后在访问前端站点时若未正确配置微信分享将自动提示错误信息"
       }
     }
   }

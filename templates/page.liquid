@@ -5,7 +5,7 @@
 
   <div class="flex h-full md:space-x-2 lg:mx-0">
     <div class="flex-1 flex flex-col h-full space-y-2 min-h-[calc(100vh-200px)]">
-      {% assign page_title = page.settings.title | presence %}
+      {% assign page_title = page.link_text | presence %}
       {% assign page_thumb_image_url = page.settings.thumb_image_url | presence %}
       {% assign page_description = page.settings.description | presence %}
       {% assign page_content = page.settings.content | presence %}
