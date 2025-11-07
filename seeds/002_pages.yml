@@ -1,0 +1,98 @@
+pages:
+  # 首页设置 (index 页面，对应 index.timeline.liquid 的 schema)
+  template_name: "index"
+  template_style: "timeline"
+  settings:
+    title: "更新与公告"
+    description: "汇总所有产品更新、功能发布、Bug修复与重要公告，<br class=\"hidden sm:inline\"/>帮助你了解我们在不断改进哪些关键内容"
+
+  # 子页面 (发布日志条目，对应 page.liquid 的 schema)
+  children:
+    - name: "V2.0.2 版本发布"
+      slug: "v2-0-2"
+      template_name: "page"
+      settings:
+        title: "V2.0.2 版本发布"
+        description: "性能优化、界面改进及多项新功能上线"
+        tags: []
+        thumb_image_url: "images/theme/release-guide.png"
+        content: |
+          <h2>🎉 新功能</h2>
+          <ul>
+            <li>新增主题自定义配色方案</li>
+            <li>支持时间线视图展示更新记录</li>
+            <li>优化移动端响应式布局</li>
+          </ul>
+
+          <h2>🔧 改进</h2>
+          <ul>
+            <li>优化页面加载速度，提升 30% 性能</li>
+            <li>改进搜索功能，支持模糊匹配</li>
+            <li>更新编辑器组件至最新版本</li>
+          </ul>
+
+          <h2>🐛 修复</h2>
+          <ul>
+            <li>修复标签筛选在某些情况下失效的问题</li>
+            <li>修复深色模式下部分文字显示不清的问题</li>
+            <li>修复分页组件在特定条件下的显示错误</li>
+          </ul>
+
+    - name: "V2.0.1 版本发布"
+      slug: "v2-0-1"
+      template_name: "page"
+      settings:
+        title: "V2.0.1 版本发布"
+        description: "重要 Bug 修复与体验优化"
+        tags: []
+        thumb_image_url: "images/theme/page.png"
+        content: |
+          <h2>🔧 改进</h2>
+          <ul>
+            <li>优化导航菜单交互体验</li>
+            <li>改进页面滚动性能</li>
+            <li>调整部分 UI 细节</li>
+          </ul>
+
+          <h2>🐛 修复</h2>
+          <ul>
+            <li>修复页面跳转时偶现的白屏问题</li>
+            <li>修复标签颜色在深色主题下显示异常</li>
+            <li>修复侧边栏在小屏设备上的布局问题</li>
+          </ul>
+
+    - name: "V2.0.0 正式版发布"
+      slug: "v2-0-0"
+      template_name: "page"
+      settings:
+        title: "V2.0.0 正式版发布"
+        description: "全新架构，全新体验！"
+        tags: []
+        thumb_image_url: "images/theme/index-list.png"
+        content: |
+          <h2>🎉 重大更新</h2>
+          <p>经过数月的开发与测试，我们很高兴地宣布 V2.0.0 正式版发布！这是一个里程碑式的版本，带来了全新的架构和体验。</p>
+
+          <h2>✨ 核心特性</h2>
+          <ul>
+            <li><strong>全新主题系统</strong>：基于 Liquid 模板引擎，支持高度自定义</li>
+            <li><strong>多视图支持</strong>：卡片、列表、时间线三种展示方式</li>
+            <li><strong>响应式设计</strong>：完美适配各种设备尺寸</li>
+            <li><strong>深色模式</strong>：支持系统级深色模式切换</li>
+            <li><strong>多语言支持</strong>：内置中文、英文等多语言</li>
+          </ul>
+
+          <h2>🚀 性能提升</h2>
+          <ul>
+            <li>页面加载速度提升 50%</li>
+            <li>减少 JavaScript 包体积 40%</li>
+            <li>优化图片加载策略</li>
+          </ul>
+
+          <h2>💡 其他改进</h2>
+          <ul>
+            <li>全新的文档结构和导航</li>
+            <li>改进的搜索功能</li>
+            <li>更友好的错误提示</li>
+            <li>优化的用户反馈机制</li>
+          </ul>

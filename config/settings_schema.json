@@ -62,24 +62,6 @@
             "--theme-color-warning": "#FFC107"
           }
         }
-      },
-      "initial_pages": {
-        "default": {
-          "name": "产品指南",
-          "default": true,
-          "pages": [
-            {
-              "name": "开始使用",
-              "slug": "get-start",
-              "template": "page"
-            },
-            {
-              "name": "操作教程",
-              "slug": "guide",
-              "template": "page"
-            }
-          ]
-        }
       }
     }
   },
